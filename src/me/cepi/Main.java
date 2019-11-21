@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.cepi.events.AntiCropTrample;
 import me.cepi.web.FileUtils;
 import me.cepi.web.WebBukkit;
 
@@ -12,6 +13,7 @@ public class Main extends JavaPlugin {
 
 
     public void onEnable() {
+    	getServer().getPluginManager().registerEvents(new AntiCropTrample(), this);
         getConfig().options().copyDefaults(true);
         saveConfig();
         FileUtils.createFolderIfNecessary(WEBSITE_FOLDER);
