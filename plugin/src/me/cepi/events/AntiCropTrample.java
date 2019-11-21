@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class AntiCropTrample implements Listener {
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event){
-		if (event.getAction() == Action.PHYSICAL) {
+		if (event.getAction() == Action.PHYSICAL && event.hasBlock()) {
             Block block = event.getClickedBlock();
             if (block == null) return;
             if (block.getType() == Material.FARMLAND) {

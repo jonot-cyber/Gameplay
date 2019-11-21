@@ -1,0 +1,34 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+group                        = 'me.cepi'
+archivesBaseName             = 'Cepi'
+version                      = '1.1'
+sourceCompatibility          = '1.8'
+targetCompatibility          = '1.8'
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+	maven {
+		url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+	}
+	maven {
+		url 'https://oss.sonatype.org/content/repositories/snapshots/'
+	}
+}
+
+dependencies {
+	compile 'org.spigotmc:spigot-api:1.14.4-R0.1-SNAPSHOT'
+	testCompile 'junit:junit:4.12'
+}
+
+processResources {
+	filter (ReplaceTokens, tokens: ['plugin.version': version])
+}
+
+jar {
+	from 'LICENSE'
+}

@@ -13,7 +13,8 @@ public class Main extends JavaPlugin {
 
 
     public void onEnable() {
-    	getServer().getPluginManager().registerEvents(new AntiCropTrample(), this);
+        getServer().getPluginManager().registerEvents(new AntiCropTrample(), this);
+
         getConfig().options().copyDefaults(true);
         saveConfig();
         FileUtils.createFolderIfNecessary(WEBSITE_FOLDER);
