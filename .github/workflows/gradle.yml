@@ -1,4 +1,4 @@
-name: Build Spigot Plugin
+name: Java CI
 
 on: push
 

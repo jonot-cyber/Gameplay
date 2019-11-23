@@ -1,4 +1,4 @@
-package me.cepi.web;
+package me.cepi.webserver.web;
 
 import java.io.File;
 import java.io.IOException;
