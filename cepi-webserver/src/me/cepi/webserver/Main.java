@@ -1,20 +1,17 @@
-package me.cepi;
+package me.cepi.webserver;
 
 import java.io.File;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.cepi.events.AntiCropTrample;
-import me.cepi.web.FileUtils;
-import me.cepi.web.WebBukkit;
+import me.cepi.webserver.web.FileUtils;
+import me.cepi.webserver.web.WebBukkit;
 
 public class Main extends JavaPlugin {
     private static final File WEBSITE_FOLDER = new File("website");
 
 
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(new AntiCropTrample(), this);
-
         getConfig().options().copyDefaults(true);
         saveConfig();
         FileUtils.createFolderIfNecessary(WEBSITE_FOLDER);
