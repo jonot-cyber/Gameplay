@@ -10,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.cepi.gameplay.modules.AntiCropTrample;
 import me.cepi.gameplay.modules.ElytraBoost;
 import me.cepi.gameplay.modules.ElytraCommand;
+import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
@@ -28,6 +29,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AfkListener(), this);
         getServer().getPluginManager().registerEvents(new FormattedChat(), this);
         getServer().getPluginManager().registerEvents(new StaffChatListener(), this);
+        getServer().getPluginManager().registerEvents(new EnderPearlRider(), this);
         
         this.getCommand("afk").setExecutor(new AfkCommand());
         
