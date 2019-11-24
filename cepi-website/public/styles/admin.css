@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('/styles/nav.css');
+html, body {
+  height: 100%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}
+@-webkit-keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: -400px 0; }
+}
+.content {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+}
+.main {
+  background: gray url(https://cdn.glitch.com/229e71ae-2fa8-4fb1-85ba-0b95a3b8d862%2Fgeometry2.png) repeat 0 0;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  animation: slide 20s linear infinite;
+  height: 100vh;
+  width: 100%;
+  display: table;
+}
+input {
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  text-align: center;
+  background: rgba(0,0,0,0);
+}
+
+input:focus {
+  border-bottom: 4px solid #4287f5;
+}

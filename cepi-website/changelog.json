@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Trumpets",
+    "date": "11/10/2019",
+    "changes": [
+      {
+        "type": "new",
+        "content": "Added trumpets to cepi."
+      }
+    ]
+  },
+  {
+    "name": "Changelog Update",
+    "date": "11/6/2019",
+    "changes": [
+      {
+        "type": "change",
+        "content": "Changelog now updates remotely!"
+      }
+    ]
+  }
+]
