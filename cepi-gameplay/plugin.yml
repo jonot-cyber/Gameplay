@@ -12,6 +12,10 @@ commands:
       description: Makes you fly!
       usage: /ely
       aliases: elytra
+   sc:
+      description: Chat privately with other staff!
+      usage: /sc [<message>]
+      aliases: staffchat
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
