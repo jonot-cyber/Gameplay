@@ -12,7 +12,7 @@ public class ElytraBoost implements Listener {
 	@EventHandler
 	public void onPlayerToggleSneakEvent(PlayerToggleSneakEvent event) {
 		Player player = event.getPlayer();
-		if (player.isSneaking() && player.getInventory().getChestplate().getType() == Material.ELYTRA) {
+		if (player.isSneaking() && player.getInventory().getChestplate().getType() == Material.ELYTRA && player.isGliding()) {
 			player.setVelocity(player.getLocation().getDirection().multiply(2));
 			player.playSound(player.getLocation(), Sound.ENTITY_ENDER_DRAGON_FLAP, 1, 1);
 		}
