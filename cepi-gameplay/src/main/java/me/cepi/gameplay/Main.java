@@ -7,18 +7,10 @@ import java.util.logging.Logger;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.cepi.gameplay.modules.AntiCropTrample;
-import me.cepi.gameplay.modules.ElytraBoost;
-import me.cepi.gameplay.modules.ElytraCommand;
-import me.cepi.gameplay.modules.EnderPearlRider;
-import me.cepi.gameplay.modules.FormattedChat;
-import me.cepi.gameplay.modules.ServerListPing;
-import me.cepi.gameplay.modules.afk.AfkCommand;
-import me.cepi.gameplay.modules.afk.AfkListener;
-import me.cepi.gameplay.modules.list.ListCommand;
-import me.cepi.gameplay.modules.list.ListInventoryListener;
-import me.cepi.gameplay.modules.staffchat.StaffChatCommand;
-import me.cepi.gameplay.modules.staffchat.StaffChatListener;
+import me.cepi.gameplay.modules.afk.*;
+import me.cepi.gameplay.modules.staffchat.*;
+import me.cepi.gameplay.modules.list.*;
+import me.cepi.gameplay.modules.*;
 
 public class Main extends JavaPlugin {
 
@@ -40,7 +32,6 @@ public class Main extends JavaPlugin {
         this.getCommand("afk").setExecutor(new AfkCommand());
 
         this.getCommand("elytra").setExecutor(new ElytraCommand());
-        this.getCommand("ely").setExecutor(new ElytraCommand());
 
         this.getCommand("sc").setExecutor(new StaffChatCommand());
         this.getCommand("staffchat").setExecutor(new StaffChatCommand());
