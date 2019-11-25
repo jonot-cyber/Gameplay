@@ -16,6 +16,9 @@ commands:
       description: Chat privately with other staff!
       usage: /sc [<message>]
       aliases: staffchat
+   list:
+      description: Shows a list of all players
+      usage: /list
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

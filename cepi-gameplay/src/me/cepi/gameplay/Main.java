@@ -14,6 +14,8 @@ import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
+import me.cepi.gameplay.modules.list.ListCommand;
+import me.cepi.gameplay.modules.list.ListInventoryListener;
 import me.cepi.gameplay.staffchat.StaffChatCommand;
 import me.cepi.gameplay.staffchat.StaffChatListener;
 
@@ -30,6 +32,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new FormattedChat(), this);
         getServer().getPluginManager().registerEvents(new StaffChatListener(), this);
         getServer().getPluginManager().registerEvents(new EnderPearlRider(), this);
+        getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);
         
         this.getCommand("afk").setExecutor(new AfkCommand());
         
@@ -38,6 +41,8 @@ public class Main extends JavaPlugin {
         
         this.getCommand("sc").setExecutor(new StaffChatCommand());
         this.getCommand("staffchat").setExecutor(new StaffChatCommand());
+        
+        this.getCommand("list").setExecutor(new ListCommand());
         
         this.logger.info("[Cepi Gameplay] has been Enabledd.");
     }
