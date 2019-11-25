@@ -12,6 +12,7 @@ import me.cepi.gameplay.modules.ElytraBoost;
 import me.cepi.gameplay.modules.ElytraCommand;
 import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FormattedChat;
+import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.list.ListCommand;
@@ -26,6 +27,7 @@ public class Main extends JavaPlugin {
 	public static List<Player> staffChatList = new ArrayList<>();
 
     public void onEnable() {
+    	
         getServer().getPluginManager().registerEvents(new AntiCropTrample(), this);
         getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
         getServer().getPluginManager().registerEvents(new AfkListener(), this);
@@ -33,6 +35,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new StaffChatListener(), this);
         getServer().getPluginManager().registerEvents(new EnderPearlRider(), this);
         getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);
+        getServer().getPluginManager().registerEvents(new ServerListPing(), this);
         
         this.getCommand("afk").setExecutor(new AfkCommand());
         
