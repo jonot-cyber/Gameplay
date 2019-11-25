@@ -1,0 +1,6 @@
+@echo off
+
+title Building jar...
+call gradlew build
+title Uploading jar...
+"C:\Program Files (x86)\WinSCP\WinSCP.exe" /command "open Cepi" "cd /plugins" "lcd C:\Users\Jeremy\Desktop\Cepi\cepi-gameplay\build\libs" "binary" "put cepi-gameplay-1.1.jar"
