@@ -1,0 +1,15 @@
+package me.cepi.gameplay.modules.list;
+
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+
+public class ListInventoryListener implements Listener {
+
+	@EventHandler
+	public void invClick(InventoryClickEvent event) {
+		if (event.getView().getTitle().contains("Player List"))
+			event.setCancelled(true);
+    }
+
+}
