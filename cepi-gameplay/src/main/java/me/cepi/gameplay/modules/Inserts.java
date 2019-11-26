@@ -31,4 +31,6 @@ public final class Inserts {
                                           + ChatColor.DARK_GRAY
                                           + "] "
                                           + ChatColor.GRAY;
+    public static final String ERROR = ChatColor.RED
+                                          + "ERROR: ";
 }
