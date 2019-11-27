@@ -1,6 +1,5 @@
 package me.cepi.gameplay.modules;
 
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,13 +15,13 @@ public class ConnectionMessages implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
-		event.setJoinMessage("" + ChatColor.GREEN + ChatColor.BOLD + "JOIN " + ChatColor.RESET + ChatColor.GRAY + player.getDisplayName());
+		event.setJoinMessage(Inserts.POSITIVE + player.getDisplayName() + "joined!");
 	}
 	
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
-		event.setQuitMessage("" + ChatColor.RED + ChatColor.BOLD + "QUIT " + ChatColor.RESET + ChatColor.GRAY + player.getDisplayName());
+		event.setQuitMessage(Inserts.NEGATIVE + player.getDisplayName() + "left!");
 	}
 
 
