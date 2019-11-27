@@ -24,7 +24,7 @@ public class StylishDeath implements Listener {
 			if (player.getHealth() < event.getFinalDamage()) {
 				event.setCancelled(true);
 				player.getWorld().playSound(player.getLocation(), Sound.ENTITY_SKELETON_DEATH, 2, 0);
-				DustOptions dustOptions = new DustOptions(Color.fromRGB(255, 50, 50), 1);
+				DustOptions dustOptions = new DustOptions(Color.fromRGB(255, 100, 100), 1);
 				player.getWorld().spawnParticle(Particle.REDSTONE, player.getLocation(), 500, 1, 2, 1, dustOptions);
 				player.setGameMode(GameMode.SPECTATOR);
 				player.sendTitle(ChatColor.RED + "You Died!", ChatColor.GRAY + "Respawning in 3 seconds...", 20, 30, 20);
