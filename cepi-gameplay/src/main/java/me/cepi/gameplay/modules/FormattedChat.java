@@ -13,7 +13,7 @@ import me.lucko.luckperms.api.*;
 
 public class FormattedChat implements Listener {
 
-	static String getPrefix(Player p) {
+	public static String getPrefix(Player p) {
 		if (Bukkit.getServer().getPluginManager().getPlugin("LuckPerms") == null) {
 			return "";
 		}

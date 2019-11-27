@@ -6,7 +6,7 @@ public final class Inserts {
     public static final String POSITIVE = ChatColor.DARK_GRAY
                                           + "["
                                           + ChatColor.DARK_GREEN
-                                          + "-"
+                                          + "+"
                                           + ChatColor.DARK_GRAY
                                           + "] "
                                           + ChatColor.GRAY;

@@ -22,6 +22,7 @@ import me.cepi.gameplay.modules.list.ListCommand;
 import me.cepi.gameplay.modules.list.ListInventoryListener;
 import me.cepi.gameplay.modules.staffchat.StaffChatCommand;
 import me.cepi.gameplay.modules.staffchat.StaffChatListener;
+// import me.cepi.gameplay.modules.menu.MenuItem;
 
 public class Main extends JavaPlugin {
 
