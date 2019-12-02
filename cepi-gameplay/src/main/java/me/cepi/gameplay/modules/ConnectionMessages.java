@@ -8,10 +8,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class ConnectionMessages implements Listener {
 	
-	/* 
-	 * Note -- Empty string at beginning is to prevent type adding errors.
-	 * */
-	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();

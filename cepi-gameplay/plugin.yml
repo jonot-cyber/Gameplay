@@ -1,5 +1,5 @@
 name: cepi-gameplay
-main: me.cepi.gameplay.Main
+main: src.main.java.me.cepi.gameplay.Main
 version: 1.0.1
 description: The gameplay core of Cepi
 author: Cepi

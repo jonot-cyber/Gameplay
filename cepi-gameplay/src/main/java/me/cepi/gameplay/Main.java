@@ -38,11 +38,11 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new FormattedChat(), this);
         getServer().getPluginManager().registerEvents(new StaffChatListener(), this);
         getServer().getPluginManager().registerEvents(new EnderPearlRider(), this);
-        getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);
         getServer().getPluginManager().registerEvents(new ServerListPing(), this);
         getServer().getPluginManager().registerEvents(new ConnectionMessages(), this);
         getServer().getPluginManager().registerEvents(new StylishDeath(), this);
         getServer().getPluginManager().registerEvents(new Dash(), this);
+        getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);
         
         this.getCommand("afk").setExecutor(new AfkCommand());
 
