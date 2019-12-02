@@ -35,23 +35,31 @@ public class Dash implements Listener {
 		Material.STONE_HOE,
 		Material.WOODEN_HOE,
 	};
+	
+	private final Material[] LEFTTYPES = new Material[] {
+			Material.BOW,
+			Material.CROSSBOW
+	};
+	
 	@EventHandler
-	public void onRightClick(PlayerInteractEvent event) {
+	public void onClick(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 		if (player.getFoodLevel() < 7) return;
 		ItemStack item = player.getInventory().getItemInMainHand();
-		if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-			Boolean isCorrect = false;
-			for (Material mat : RIGHTTYPES) 
+		Boolean isCorrect = false;
+		if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK)
+			for (Material mat : LEFTTYPES) 
 				if (item.getType() == mat)
 					isCorrect = true;
-			if (isCorrect) {
-				player.setVelocity(player.getLocation().getDirection().multiply(1.3));
-				player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_ATTACK_SWEEP, 1, 1);
-				player.setFoodLevel(player.getFoodLevel() - 3);
-			}
-		} else if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK) {
-			
+		else if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK)
+			for (Material mat2 : RIGHTTYPES) 
+				if (item.getType() == mat2)
+					isCorrect = true;
+		
+		if (isCorrect) {
+			player.setVelocity(player.getLocation().getDirection().multiply(1.3));
+			player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_ATTACK_SWEEP, 1, 1);
+			player.setFoodLevel(player.getFoodLevel() - 3);
 		}
 	}
 

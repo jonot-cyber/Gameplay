@@ -12,13 +12,19 @@ commands:
       description: Makes you fly!
       usage: /ely
       aliases: elytra
+      permission: cepi.builder
    sc:
       description: Chat privately with other staff!
       usage: /sc [<message>]
       aliases: staffchat
+      permission: cepi.staff
    list:
       description: Shows a list of all players
       usage: /list
+   spawn:
+      description: Sends a person to spawn
+      usage: /list
+      permission: cepi.builder
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

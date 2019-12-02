@@ -11,13 +11,13 @@ public class ConnectionMessages implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
-		event.setJoinMessage(Inserts.POSITIVE + player.getDisplayName() + "joined!");
+		event.setJoinMessage(Inserts.POSITIVE + player.getDisplayName() + " joined!");
 	}
 	
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
-		event.setQuitMessage(Inserts.NEGATIVE + player.getDisplayName() + "left!");
+		event.setQuitMessage(Inserts.NEGATIVE + player.getDisplayName() + " left!");
 	}
 
 

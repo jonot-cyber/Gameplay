@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +16,7 @@ import me.cepi.gameplay.modules.ElytraCommand;
 import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.ServerListPing;
+import me.cepi.gameplay.modules.Spawn;
 import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
@@ -52,7 +54,9 @@ public class Main extends JavaPlugin {
         this.getCommand("staffchat").setExecutor(new StaffChatCommand());
 
         this.getCommand("list").setExecutor(new ListCommand());
-
+        
+        this.getCommand("spawn").setExecutor(new Spawn());
+        
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }
 

@@ -1,5 +1,4 @@
 .gradle/**
-cepi-gameplay/bin/**
 *.class
 *.prefs
 *.class
