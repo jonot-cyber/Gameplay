@@ -29,6 +29,16 @@ commands:
       description: Sets the spawn
       usage: /setspawn
       permission: cepi.admin
+   setspawn:
+      description: Sets the spawn
+      usage: /setspawn
+      permission: cepi.admin
+   discord:
+      description: Shows the discord
+      usage: /discord
+   rename:
+      description: Renames an item
+      usage: /rename <...name>
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

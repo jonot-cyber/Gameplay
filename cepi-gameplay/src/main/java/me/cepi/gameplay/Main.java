@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.cepi.gameplay.modules.AntiCropTrample;
 import me.cepi.gameplay.modules.ConnectionMessages;
 import me.cepi.gameplay.modules.Dash;
+import me.cepi.gameplay.modules.DiscordInfo;
 import me.cepi.gameplay.modules.ElytraBoost;
 import me.cepi.gameplay.modules.ElytraCommand;
 import me.cepi.gameplay.modules.EnderPearlRider;
@@ -19,6 +19,7 @@ import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
+import me.cepi.gameplay.modules.itemediting.SimpleRename;
 import me.cepi.gameplay.modules.spawn.MakeSpawn;
 import me.cepi.gameplay.modules.spawn.ToSpawn;
 import me.cepi.gameplay.modules.staffchat.StaffChatCommand;
@@ -53,10 +54,12 @@ public class Main extends JavaPlugin {
         // this.getCommand("list").setExecutor(new ListCommand());
         
         this.getCommand("setspawn").setExecutor(new MakeSpawn());
-        Bukkit.broadcastMessage("Hi6");
         this.getCommand("spawn").setExecutor(new ToSpawn());
         
-        Bukkit.broadcastMessage("Hi7");
+        this.getCommand("discord").setExecutor(new DiscordInfo());
+        
+        this.getCommand("rename").setExecutor(new SimpleRename());
+        
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }
 
