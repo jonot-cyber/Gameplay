@@ -26,6 +26,7 @@ public class StylishDeath implements Listener {
 				event.setCancelled(true);
 				player.setHealth(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue());
 				player.setFireTicks(0);
+				player.setFoodLevel(20);
 				player.getWorld().playSound(player.getLocation(), Sound.ENTITY_SKELETON_DEATH, 2, 0);
 				DustOptions dustOptions = new DustOptions(Color.fromRGB(255, 100, 100), 1);
 				player.getWorld().spawnParticle(Particle.REDSTONE, player.getLocation(), 500, 1, 2, 1, dustOptions);

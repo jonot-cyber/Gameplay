@@ -28,17 +28,17 @@ public class FormattedChat implements Listener {
 		String message = event.getMessage();
 		Player player = event.getPlayer();
 
-		message = message.replaceAll(":flower:", "âœ¿")
-						 .replaceAll(":smile:", "â˜º")
-						 .replaceAll(":heart:", "â�¤")
-						 .replaceAll(":peace:", "â˜®")
-						 .replaceAll(":no:", "âœ–")
-						 .replaceAll(":cloud:", "â˜�")
-						 .replaceAll(":skull:", "â˜ ");
+		message = message.replaceAll(":flower:", "✿")
+						 .replaceAll(":smile:", "☺")
+						 .replaceAll(":heart:", "♥")
+						 .replaceAll(":peace:", "☮")
+						 .replaceAll(":no:", "✗")
+						 .replaceAll(":cloud:", "☁")
+						 .replaceAll(":skull:", "☠");
 
 		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 			if (message.contains(p.getDisplayName())) {
-				message = message.replaceAll(p.getDisplayName(), ChatColor.YELLOW + p.getDisplayName() + "Â§r");
+				message = message.replaceAll(p.getDisplayName(), ChatColor.YELLOW + p.getDisplayName() + "§r");
 				p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 2, 2);
 			}
 		}

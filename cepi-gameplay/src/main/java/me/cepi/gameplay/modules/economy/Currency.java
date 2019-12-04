@@ -24,7 +24,6 @@ public class Currency implements Listener {
 		
 		// TODO add items to list
 				
-				
 		List<ItemStack> itemList = new ArrayList<>();
 		return itemList;
 	}
