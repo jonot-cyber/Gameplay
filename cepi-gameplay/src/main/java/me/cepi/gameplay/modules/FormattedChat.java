@@ -28,17 +28,17 @@ public class FormattedChat implements Listener {
 		String message = event.getMessage();
 		Player player = event.getPlayer();
 
-		message = message.replaceAll(":flower:", "✿")
-						 .replaceAll(":smile:", "☺")
-						 .replaceAll(":heart:", "❤")
-						 .replaceAll(":peace:", "☮")
-						 .replaceAll(":no:", "✖")
-						 .replaceAll(":cloud:", "☁")
-						 .replaceAll(":skull:", "☠");
+		message = message.replaceAll(":flower:", "âœ¿")
+						 .replaceAll(":smile:", "â˜º")
+						 .replaceAll(":heart:", "â�¤")
+						 .replaceAll(":peace:", "â˜®")
+						 .replaceAll(":no:", "âœ–")
+						 .replaceAll(":cloud:", "â˜�")
+						 .replaceAll(":skull:", "â˜ ");
 
 		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 			if (message.contains(p.getDisplayName())) {
-				message = message.replaceAll(p.getDisplayName(), ChatColor.YELLOW + p.getDisplayName() + "§r");
+				message = message.replaceAll(p.getDisplayName(), ChatColor.YELLOW + p.getDisplayName() + "Â§r");
 				p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 2, 2);
 			}
 		}
@@ -49,14 +49,12 @@ public class FormattedChat implements Listener {
 				p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 2, 1);
 		}
 
-		if (player.hasPermission("cepi.staff")) {
+		if (player.hasPermission("cepi.staff"))
 			message = ChatColor.translateAlternateColorCodes('&', message);
-		}
 
 		event.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.GRAY
 		+ player.getLevel()
 		+ ChatColor.DARK_GRAY + "]" + ChatColor.RESET + " "
-		// + ChatColor.translateAlternateColorCodes('&', PermissionsEx.getUser(player).getPrefix()) // pex is a mess, we need to stop using it asap
 		+ ChatColor.translateAlternateColorCodes('&', getPrefix(player))
 		+ player.getDisplayName()
 		+ ChatColor.DARK_GRAY + ": " + ChatColor.RESET

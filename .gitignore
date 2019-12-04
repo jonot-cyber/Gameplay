@@ -1,4 +1,2 @@
 .gradle/**
 *.class
-*.prefs
-*.class

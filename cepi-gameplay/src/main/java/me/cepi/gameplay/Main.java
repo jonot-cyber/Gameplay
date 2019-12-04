@@ -16,12 +16,11 @@ import me.cepi.gameplay.modules.ElytraCommand;
 import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.ServerListPing;
-import me.cepi.gameplay.modules.Spawn;
 import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
-import me.cepi.gameplay.modules.list.ListCommand;
-import me.cepi.gameplay.modules.list.ListInventoryListener;
+import me.cepi.gameplay.modules.spawn.MakeSpawn;
+import me.cepi.gameplay.modules.spawn.ToSpawn;
 import me.cepi.gameplay.modules.staffchat.StaffChatCommand;
 import me.cepi.gameplay.modules.staffchat.StaffChatListener;
 // import me.cepi.gameplay.modules.menu.MenuItem;
@@ -33,7 +32,6 @@ public class Main extends JavaPlugin {
 	public static List<Player> staffChatList = new ArrayList<>();
 
     public void onEnable() {
-
         getServer().getPluginManager().registerEvents(new AntiCropTrample(), this);
         getServer().getPluginManager().registerEvents(new ElytraBoost(), this);
         getServer().getPluginManager().registerEvents(new AfkListener(), this);
@@ -44,19 +42,21 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ConnectionMessages(), this);
         getServer().getPluginManager().registerEvents(new StylishDeath(), this);
         getServer().getPluginManager().registerEvents(new Dash(), this);
-        getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);
-        
+        // getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);;
         this.getCommand("afk").setExecutor(new AfkCommand());
 
         this.getCommand("elytra").setExecutor(new ElytraCommand());
-
+        
         this.getCommand("sc").setExecutor(new StaffChatCommand());
         this.getCommand("staffchat").setExecutor(new StaffChatCommand());
 
-        this.getCommand("list").setExecutor(new ListCommand());
+        // this.getCommand("list").setExecutor(new ListCommand());
         
-        this.getCommand("spawn").setExecutor(new Spawn());
+        this.getCommand("setspawn").setExecutor(new MakeSpawn());
+        Bukkit.broadcastMessage("Hi6");
+        this.getCommand("spawn").setExecutor(new ToSpawn());
         
+        Bukkit.broadcastMessage("Hi7");
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }
 

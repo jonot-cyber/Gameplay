@@ -1,5 +1,5 @@
 name: cepi-gameplay
-main: src.main.java.me.cepi.gameplay.Main
+main: me.cepi.gameplay.Main
 version: 1.0.1
 description: The gameplay core of Cepi
 author: Cepi
@@ -23,8 +23,12 @@ commands:
       usage: /list
    spawn:
       description: Sends a person to spawn
-      usage: /list
+      usage: /spawn
       permission: cepi.builder
+   setspawn:
+      description: Sets the spawn
+      usage: /setspawn
+      permission: cepi.admin
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
