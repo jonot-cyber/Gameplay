@@ -8,7 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class CustomWeapon {
 
 	private ChatColor rarityColor;
-	private String displayName;
+	private String rarity;
 	private String name;
 	private Material material;
 
@@ -21,26 +21,26 @@ public class CustomWeapon {
 			rarityColor = ChatColor.GRAY;
 		} else if (rarity == Rarity.UNCOMMON) {
 			rarityName = "Uncommon";
-			rarityColor = ChatColor.GREEN;
+			rarityColor = ChatColor.DARK_GREEN;
 		} else if (rarity == Rarity.RARE) {
 			rarityName = "Rare";
 			rarityColor = ChatColor.BLUE;
 		} else if (rarity == Rarity.EPIC) {
 			rarityName = "Epic";
-			rarityColor = ChatColor.GOLD;
+			rarityColor = ChatColor.LIGHT_PURPLE;
 		} else if (rarity == Rarity.LEGENDARY) {
 			rarityName = "Legendary";
-			rarityColor = ChatColor.YELLOW;
+			rarityColor = ChatColor.GOLD;
 		}
 		
-		this.displayName = rarityName;
+		this.rarity = rarityName;
 		this.rarityColor = rarityColor;
 		this.material = material;
 		this.name = name;
 	}
 	
 	public CustomWeapon setDisplayName(String name) {
-		this.displayName = name;
+		this.name = name;
 		return this;
 	}
 	
