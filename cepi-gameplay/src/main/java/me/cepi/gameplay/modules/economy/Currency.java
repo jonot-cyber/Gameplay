@@ -8,22 +8,20 @@ import org.bukkit.inventory.ItemStack;
 
 public class Currency implements Listener {
 	public static List<ItemStack> integerToItems(double amount) {
-		int crateDivider = 262144;
-		int barDivider = 4096;
-		int pouchDivider = 64;
-		double crates = Math.floor(amount / crateDivider);
-		amount = amount - (crateDivider * crates);
-
-		double bars = Math.floor(amount / barDivider);
+		int crateDivider = 4096;
+		int barDivider = 64;
+		
+		int bars = (int) Math.floor(amount / barDivider);
 		amount = amount - (barDivider * bars);
 
-		double pouches = Math.floor(amount / pouchDivider);
-		amount = amount - (pouchDivider * pouches);
+		int pouches = (int) Math.floor(amount / crateDivider);
+		amount = amount - (crateDivider * pouches);
 
 		double nuggets = amount;
 		
 		// TODO add items to list
 				
+		
 		List<ItemStack> itemList = new ArrayList<>();
 		return itemList;
 	}
