@@ -39,6 +39,13 @@ commands:
    rename:
       description: Renames an item
       usage: /rename <...name>
+   party:
+      description: Manage a party!
+      usage: /party <arguments>
+   friends:
+      description: Get some friends, or allow yourself to get friends!
+      usage: /friends <arguments>
+      aliases: friend
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

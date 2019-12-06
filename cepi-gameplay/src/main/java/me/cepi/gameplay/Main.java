@@ -20,6 +20,8 @@ import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
+import me.cepi.gameplay.modules.social.Friends;
+import me.cepi.gameplay.modules.social.Party;
 import me.cepi.gameplay.modules.spawn.MakeSpawn;
 import me.cepi.gameplay.modules.spawn.ToSpawn;
 import me.cepi.gameplay.modules.staffchat.StaffChatCommand;
@@ -59,6 +61,11 @@ public class Main extends JavaPlugin {
         this.getCommand("discord").setExecutor(new DiscordInfo());
         
         this.getCommand("rename").setExecutor(new SimpleRename());
+        
+        this.getCommand("party").setExecutor(new Party());
+        
+        this.getCommand("friends").setExecutor(new Friends());
+        this.getCommand("friend").setExecutor(new Friends());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }
