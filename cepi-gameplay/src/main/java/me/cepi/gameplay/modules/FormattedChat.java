@@ -28,7 +28,8 @@ public class FormattedChat implements Listener {
 		String message = event.getMessage();
 		Player player = event.getPlayer();
 
-		message = message.replaceAll(":flower:", "✿")
+		message = message.replaceAll("%", "%%")
+					     .replaceAll(":flower:", "✿")
 						 .replaceAll(":smile:", "☺")
 						 .replaceAll(":heart:", "♥")
 						 .replaceAll(":peace:", "☮")

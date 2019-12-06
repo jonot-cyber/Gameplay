@@ -10,7 +10,7 @@ public class WeaponBench implements Listener {
 		if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
 		event.setCancelled(true);
 		
-		// TODO waiting on jeremy for inventory api
+		// TODO waiting on jeremy for inventory API
 		
 	}
 
