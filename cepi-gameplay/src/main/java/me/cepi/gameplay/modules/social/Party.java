@@ -12,7 +12,6 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import me.cepi.gameplay.modules.Inserts;
-import net.md_5.bungee.api.ChatColor;
 
 public class Party implements CommandExecutor {
 
@@ -35,8 +34,8 @@ public class Party implements CommandExecutor {
 			}
 		} else {
 			player.sendMessage(Inserts.NEGATIVE + "You aren't in a party!");
-			player.sendMessage(ChatColor.BLUE + "- Create one with /party create, ");
-			player.sendMessage(ChatColor.BLUE + "- or join one with /party join <player>");
+			player.sendMessage(Inserts.NEUTRAL + "Create one with /party create, ");
+			player.sendMessage(Inserts.NEUTRAL + "or join one with /party join <player>");
 			// TODO make commands clickable
 		}
  		return true;
