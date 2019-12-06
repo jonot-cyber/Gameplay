@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import me.cepi.gameplay.modules.Inserts;
+import me.cepi.gameplay.modules.inserts.Inserts;
 
 public class ToSpawn implements CommandExecutor {
 	

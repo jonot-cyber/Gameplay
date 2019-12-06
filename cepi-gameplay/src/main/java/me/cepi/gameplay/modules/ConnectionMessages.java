@@ -6,6 +6,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import me.cepi.gameplay.modules.inserts.Inserts;
+
 public class ConnectionMessages implements Listener {
 	
 	@EventHandler

@@ -1,4 +1,4 @@
-package me.cepi.gameplay.modules;
+package me.cepi.gameplay.modules.inserts;
 
 import org.bukkit.ChatColor;
 
