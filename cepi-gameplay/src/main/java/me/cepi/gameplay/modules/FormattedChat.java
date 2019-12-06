@@ -35,7 +35,9 @@ public class FormattedChat implements Listener {
 						 .replaceAll(":peace:", "☮")
 						 .replaceAll(":no:", "✗")
 						 .replaceAll(":cloud:", "☁")
-						 .replaceAll(":skull:", "☠");
+						 .replaceAll(":skull:", "☠")
+						 .replaceAll(":shrug:", "¯\\_(ツ)_/¯");
+						
 
 		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 			if (message.contains(p.getDisplayName())) {
