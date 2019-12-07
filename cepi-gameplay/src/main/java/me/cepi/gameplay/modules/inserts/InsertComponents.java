@@ -35,4 +35,8 @@ public final class InsertComponents {
 		return InsertComponents.generate(ChatColor.DARK_GRAY, "-", ChatColor.DARK_RED, ChatColor.GRAY);
 	}
 	
+	public static final TextComponent NEUTRAL() {
+		return InsertComponents.generate(ChatColor.DARK_GRAY, "*", ChatColor.GOLD, ChatColor.GRAY);
+	}
+	
 }

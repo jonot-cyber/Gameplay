@@ -11,7 +11,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
+import me.cepi.gameplay.modules.inserts.InsertComponents;
 import me.cepi.gameplay.modules.inserts.Inserts;
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.ClickEvent.Action;
+import net.md_5.bungee.api.chat.TextComponent;
 
 public class Party implements CommandExecutor {
 
@@ -34,9 +39,37 @@ public class Party implements CommandExecutor {
 			}
 		} else {
 			player.sendMessage(Inserts.NEGATIVE + "You aren't in a party!");
-			player.sendMessage(Inserts.NEUTRAL + "Create one with /party create, ");
-			player.sendMessage(Inserts.NEUTRAL + "or join one with /party join <player>");
-			// TODO make commands clickable
+			
+			TextComponent insert = InsertComponents.NEUTRAL();
+			
+			TextComponent create = new TextComponent();
+			create.setColor(ChatColor.GRAY);
+			create.setText("Create one with ");
+			insert.addExtra(create);
+			
+			TextComponent clickableCreation = new TextComponent();
+			clickableCreation.setColor(ChatColor.GREEN);
+			clickableCreation.setItalic(true);
+			clickableCreation.setText("/party create");
+			clickableCreation.setClickEvent(new ClickEvent(Action.SUGGEST_COMMAND, "/party create"));
+			insert.addExtra(clickableCreation);
+			
+			TextComponent insertJoin = InsertComponents.NEUTRAL();
+			
+			TextComponent join = new TextComponent();
+			join.setColor(ChatColor.GRAY);
+			join.setText("or join one with ");
+			insertJoin.addExtra(join);
+			
+			TextComponent clickableJoining = new TextComponent();
+			clickableJoining.setColor(ChatColor.GREEN);
+			clickableJoining.setItalic(true);
+			clickableJoining.setText("/party join");
+			clickableJoining.setClickEvent(new ClickEvent(Action.SUGGEST_COMMAND, "/party join"));
+			insertJoin.addExtra(clickableJoining);
+			
+			player.spigot().sendMessage(insert);
+			player.spigot().sendMessage(insertJoin);
 		}
  		return true;
 	}

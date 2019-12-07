@@ -1,5 +1,8 @@
 package me.cepi.gameplay.modules.itemcrafting;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -49,6 +52,10 @@ public class CustomWeapon {
 		ItemMeta weaponMeta = weapon.getItemMeta();
 		weaponMeta.setDisplayName(this.rarityColor + this.name);
 		
+		List<String> lore = new ArrayList<>();
+		lore.add("" + this.rarityColor + ChatColor.BOLD + this.rarity);
+		
+		weaponMeta.setLore(lore);
 		weapon.setItemMeta(weaponMeta);
 		return weapon;
 	}
