@@ -16,6 +16,7 @@ import me.cepi.gameplay.modules.ElytraCommand;
 import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.ServerListPing;
+import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
@@ -66,6 +67,8 @@ public class Main extends JavaPlugin {
         
         this.getCommand("friends").setExecutor(new Friends());
         this.getCommand("friend").setExecutor(new Friends());
+        
+        this.getCommand("serverstatus").setExecutor(new Status());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }

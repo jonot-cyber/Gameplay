@@ -46,10 +46,17 @@ commands:
       description: Get some friends, or allow yourself to get friends!
       usage: /friends <arguments>
       aliases: friend
+   serverstatus:
+      description: Get the server status
+      usage: /serverstatus
+      permission: cepi.debug
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
       default: op
    cepi.builder:
       description: Basic permission for all builders
+      default: op
+   cepi.debug:
+      description: Basic permission for debugging
       default: op
