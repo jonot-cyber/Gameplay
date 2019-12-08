@@ -50,12 +50,19 @@ commands:
       description: Get the server status
       usage: /serverstatus
       permission: cepi.debug
+   eco:
+      description: Manage the economy
+      usage: /eco
+      permission: cepi.eco
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
       default: op
    cepi.builder:
       description: Basic permission for all builders
+      default: op
+   cepi.eco:
+      description: Basic permission for economy
       default: op
    cepi.debug:
       description: Basic permission for debugging

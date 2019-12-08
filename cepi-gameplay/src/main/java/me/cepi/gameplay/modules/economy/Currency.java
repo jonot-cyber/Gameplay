@@ -36,7 +36,7 @@ public class Currency implements Listener {
 		crate.setItemMeta(crateMeta);
 		crate.setAmount(crates);
 		
-		ItemStack bar = new ItemStack(Material.IRON_BARS);
+		ItemStack bar = new ItemStack(Material.IRON_INGOT);
 		ItemMeta barMeta = bar.getItemMeta();
 		barMeta.setDisplayName(generateTier(2, ChatColor.BLUE) + ChatColor.GRAY + "Silver Bar");
 		bar.setItemMeta(barMeta);
