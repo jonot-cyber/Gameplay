@@ -15,7 +15,7 @@ public class Balance implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (sender instanceof ConsoleCommandSender) return false;
 		Player player = (Player) sender;
-		player.sendMessage(Inserts.NEUTRAL + "Money: " + Currency.inventoryToMoney(player.getInventory()));
+		player.sendMessage(Inserts.NEUTRAL + "Money: " + Currency.itemsToMoney(player.getInventory().getContents()));
 		return true;
 	}
 		

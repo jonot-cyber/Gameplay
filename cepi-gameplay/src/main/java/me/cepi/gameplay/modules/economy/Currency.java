@@ -57,9 +57,9 @@ public class Currency implements Listener {
 		return itemList;
 	}
 	
-	public static int inventoryToMoney(Inventory inv) {
+	public static int itemsToMoney(ItemStack[] stack) {
 		int amount = 0;
-		for (ItemStack item : inv.getContents()) {
+		for (ItemStack item : stack) {
 			if (item != null) {
 				ItemMeta meta = item.getItemMeta();
 				if (meta.getDisplayName().contains("Silver Block")) {
