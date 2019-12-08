@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -30,9 +31,9 @@ public class Currency implements Listener {
 		
 		// TODO add items to list
 		
-		ItemStack crate = new ItemStack(Material.BARREL);
+		ItemStack crate = new ItemStack(Material.IRON_BLOCK);
 		ItemMeta crateMeta = crate.getItemMeta();
-		crateMeta.setDisplayName(generateTier(3, ChatColor.GREEN) + ChatColor.GRAY + "Silver Crate");
+		crateMeta.setDisplayName(generateTier(3, ChatColor.GREEN) + ChatColor.GRAY + "Silver Block");
 		crate.setItemMeta(crateMeta);
 		crate.setAmount(crates);
 		
@@ -54,5 +55,22 @@ public class Currency implements Listener {
 		itemList.add(nugget);
 		
 		return itemList;
+	}
+	
+	public static int inventoryToMoney(Inventory inv) {
+		int amount = 0;
+		for (ItemStack item : inv.getContents()) {
+			if (item != null) {
+				ItemMeta meta = item.getItemMeta();
+				if (meta.getDisplayName().contains("Silver Block")) {
+					amount = amount + 4096;
+				} else if (meta.getDisplayName().contains("Silver Bar")) {
+					amount = amount + 64;
+				} else if (meta.getDisplayName().contains("Silver Nugget")) {
+					amount++;
+				}
+			}
+		}
+		return amount;
 	}
 }

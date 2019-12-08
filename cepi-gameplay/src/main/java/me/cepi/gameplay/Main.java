@@ -20,6 +20,7 @@ import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
+import me.cepi.gameplay.modules.economy.Balance;
 import me.cepi.gameplay.modules.economy.EcoAdmin;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
 import me.cepi.gameplay.modules.social.Friends;
@@ -72,6 +73,9 @@ public class Main extends JavaPlugin {
         this.getCommand("serverstatus").setExecutor(new Status());
         
         this.getCommand("eco").setExecutor(new EcoAdmin());
+
+        this.getCommand("bal").setExecutor(new Balance());
+        this.getCommand("balance").setExecutor(new Balance());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }

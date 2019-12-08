@@ -54,6 +54,10 @@ commands:
       description: Manage the economy
       usage: /eco
       permission: cepi.eco
+   bal:
+      description: Check your balance
+      usage: /bal
+      aliases: balance
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
