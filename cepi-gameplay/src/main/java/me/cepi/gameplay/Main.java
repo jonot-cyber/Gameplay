@@ -15,6 +15,7 @@ import me.cepi.gameplay.modules.ElytraBoost;
 import me.cepi.gameplay.modules.ElytraCommand;
 import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FormattedChat;
+import me.cepi.gameplay.modules.Gamemode;
 import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
@@ -76,6 +77,12 @@ public class Main extends JavaPlugin {
 
         this.getCommand("bal").setExecutor(new Balance());
         this.getCommand("balance").setExecutor(new Balance());
+        
+        this.getCommand("gamemode").setExecutor(new Gamemode());
+        this.getCommand("gms").setExecutor(new Gamemode());
+        this.getCommand("gmsp").setExecutor(new Gamemode());
+        this.getCommand("gmc").setExecutor(new Gamemode());
+        this.getCommand("gma").setExecutor(new Gamemode());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }

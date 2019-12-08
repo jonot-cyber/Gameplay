@@ -58,6 +58,10 @@ commands:
       description: Check your balance
       usage: /bal
       aliases: balance
+   gamemode:
+      description: Manipulate your gamemode
+      usage: /gamemode <gamemode>
+      aliases: [gmc, gms, gmsp, gma]
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
@@ -70,4 +74,7 @@ permissions:
       default: op
    cepi.debug:
       description: Basic permission for debugging
+      default: op
+   cepi.gamemode:
+      description: Basic permission for gamemode manipulation
       default: op
