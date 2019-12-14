@@ -3,7 +3,7 @@ main: me.cepi.gameplay.Main
 version: 1.0.1
 description: The gameplay core of Cepi
 author: Cepi
-api-version: 1.14
+api-version: 1.15
 commands:
    afk:
       description: Makes you go afk!
