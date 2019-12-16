@@ -25,6 +25,7 @@ import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
 import me.cepi.gameplay.modules.economy.EcoAdmin;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
+import me.cepi.gameplay.modules.list.ListCommand;
 import me.cepi.gameplay.modules.social.Friends;
 import me.cepi.gameplay.modules.social.Party;
 import me.cepi.gameplay.modules.spawn.MakeSpawn;
@@ -58,7 +59,7 @@ public class Main extends JavaPlugin {
         this.getCommand("sc").setExecutor(new StaffChatCommand());
         this.getCommand("staffchat").setExecutor(new StaffChatCommand());
 
-        // this.getCommand("list").setExecutor(new ListCommand());
+        this.getCommand("list").setExecutor(new ListCommand());
         
         this.getCommand("setspawn").setExecutor(new MakeSpawn());
         this.getCommand("spawn").setExecutor(new ToSpawn());
