@@ -62,6 +62,10 @@ commands:
       description: Manipulate your gamemode
       usage: /gamemode <gamemode>
       aliases: [gmc, gms, gmsp, gma]
+   top:
+      permission: cepi.buildere
+      description: Teleports you to the top
+      usage: /top
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

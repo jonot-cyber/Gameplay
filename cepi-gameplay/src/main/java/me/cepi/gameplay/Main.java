@@ -19,6 +19,7 @@ import me.cepi.gameplay.modules.Gamemode;
 import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
+import me.cepi.gameplay.modules.Top;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
@@ -83,6 +84,8 @@ public class Main extends JavaPlugin {
         this.getCommand("gmsp").setExecutor(new Gamemode());
         this.getCommand("gmc").setExecutor(new Gamemode());
         this.getCommand("gma").setExecutor(new Gamemode());
+        
+        this.getCommand("top").setExecutor(new Top());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }

@@ -17,7 +17,7 @@ public class MenuItem implements Listener {
         String eventTitle = event.getView().getTitle();
         Integer eventSlot = event.getSlot();
 
-        if (player == eventPlayer 
+        if (player.getUniqueId() == eventPlayer.getUniqueId() 
             && title == eventTitle
             && slot == eventSlot) {
             
