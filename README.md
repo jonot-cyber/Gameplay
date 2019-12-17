@@ -1,5 +1,6 @@
 # Cepi
 The first open source full minecraft RPG server. This RPG is *mostly* written in `Java`.
+![A picture of a house inside the project.](https://cdn.glitch.com/8221397f-6c86-4df7-8594-6863280dc149/2019-09-23_20.59.40.png?v=1569286792096)
 
 ## Prerequisites
 
