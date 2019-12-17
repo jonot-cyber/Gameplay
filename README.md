@@ -4,7 +4,10 @@ The first open source full minecraft RPG server. This RPG is *mostly* written in
 
 ## Prerequisites
 
-We recommend using the Eclipse or Intellij IDE. Make a personal folder, and in that folder, run `git clone https://github.com/LeoDog896/Cepi.git`.
+We recommend using the Eclipse or Intellij IDE. Make a personal folder.
+
+## Installation
+In a folder, run `git clone https://github.com/LeoDog896/Cepi.git`.
 Once you do this, you can use any of our projects via importing them directly in your preferred IDE.
 
 To use the folder `cepi-resourcepack`, you can import it into your `.minecraft` resource pack folder. To build and export it, you can ZIP it up.
