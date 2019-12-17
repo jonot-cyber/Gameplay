@@ -18,10 +18,11 @@ Coming soon!
 
 ## Credits
 Thanks to
+* Jakane
 * LeoDog896
 * jeremy
 * benjables_
-To making this possible.
+To making this possible. Also, thanks to the builders and the admins that helped organize this project
 
 ## License
 We are using the [GNU Lesser General Public License v3.0](https://github.com/LeoDog896/Cepi/blob/master/LICENSE).
