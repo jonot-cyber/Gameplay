@@ -20,6 +20,7 @@ public class Menu implements Listener {
     }
 
     public Menu(Player p, Integer inventoryRows, String inventoryTitle) {
+    	
         if (!(inventoryRows <= 1 || inventoryRows >= 6) && !(inventoryTitle.contains("§"))) {
             // inventoryRows must be between 1 and 6
             // title must not be formatted

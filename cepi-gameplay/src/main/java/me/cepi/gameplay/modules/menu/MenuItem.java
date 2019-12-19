@@ -1,6 +1,5 @@
 package me.cepi.gameplay.modules.menu;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,27 +12,30 @@ public class MenuItem implements Listener {
     private int slot;
     private Player player;
     static Runnable codeBlock;
+    private Boolean shouldCancel = false;
 
     @EventHandler
     public void inventoryClick(InventoryClickEvent event) {
-    	Bukkit.getScheduler().runTask(Main.getPlugin(Main.class), () -> {
-    		Player eventPlayer = (Player) event.getWhoClicked();
-            String eventTitle = event.getView().getTitle();
-            Integer eventSlot = event.getSlot();
-            Bukkit.broadcastMessage("" + slot + "." + eventSlot);
-            Bukkit.broadcastMessage("" + title + "." + eventTitle);
-            Bukkit.broadcastMessage("" + player.getUniqueId().toString() + "." + eventPlayer.getUniqueId().toString());
-            if (player.getUniqueId() == eventPlayer.getUniqueId() 
-                && title == eventTitle
-                && slot == eventSlot) {
-                
-                codeBlock.run();
-            }
-    	});
+    	Player eventPlayer = (Player) event.getWhoClicked();
+        String eventTitle = event.getView().getTitle();
+        Integer eventSlot = event.getSlot();
+        if (player.getUniqueId() == eventPlayer.getUniqueId() 
+            && title == eventTitle
+            && slot == eventSlot) {
+        	if (codeBlock != null) codeBlock.run();
+        	if (this.shouldCancel) event.setCancelled(true);
+        }  
     }
 
-    public void onClick(Runnable code) {
+    public void onClick(Runnable code, Boolean toCancel) {
         codeBlock = code;
+        this.shouldCancel = toCancel;
+        Main.getPlugin(Main.class).getServer().getPluginManager().registerEvents(this, Main.getPlugin(Main.class));
+    }
+    
+    public void onClick(Boolean toCancel) {
+        this.shouldCancel = toCancel;
+        Main.getPlugin(Main.class).getServer().getPluginManager().registerEvents(this, Main.getPlugin(Main.class));
     }
 
     public MenuItem(String title, int slot, Player player) {
@@ -41,4 +43,5 @@ public class MenuItem implements Listener {
         this.slot = slot;
         this.player = player;
     }
+
 }

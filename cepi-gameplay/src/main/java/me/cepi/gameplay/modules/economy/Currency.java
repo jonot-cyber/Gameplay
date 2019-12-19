@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -62,13 +61,12 @@ public class Currency implements Listener {
 		for (ItemStack item : stack) {
 			if (item != null) {
 				ItemMeta meta = item.getItemMeta();
-				if (meta.getDisplayName().contains("Silver Block")) {
+				if (meta.getDisplayName().contains("Silver Block")) 
 					amount = amount + 4096;
-				} else if (meta.getDisplayName().contains("Silver Bar")) {
+				else if (meta.getDisplayName().contains("Silver Bar"))
 					amount = amount + 64;
-				} else if (meta.getDisplayName().contains("Silver Nugget")) {
+				else if (meta.getDisplayName().contains("Silver Nugget"))
 					amount++;
-				}
 			}
 		}
 		return amount;
