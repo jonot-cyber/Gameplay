@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.cepi.gameplay.modules.AntiCropTrample;
 import me.cepi.gameplay.modules.ConnectionMessages;
+import me.cepi.gameplay.modules.CreativeBuilder;
 import me.cepi.gameplay.modules.Dash;
 import me.cepi.gameplay.modules.DiscordInfo;
 import me.cepi.gameplay.modules.ElytraBoost;
@@ -51,6 +52,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ConnectionMessages(), this);
         getServer().getPluginManager().registerEvents(new StylishDeath(), this);
         getServer().getPluginManager().registerEvents(new Dash(), this);
+        getServer().getPluginManager().registerEvents(new CreativeBuilder(), this);
         // getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);;
         this.getCommand("afk").setExecutor(new AfkCommand());
 
