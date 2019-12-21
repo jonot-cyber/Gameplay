@@ -71,6 +71,10 @@ commands:
       description: Sets your speed
       usage: /speed <fly/walk> <speed>
       aliases: [flyspeed, walkspeed]
+   skull:
+      permission: cepi.builder
+      description: Give the user a skull
+      usage: /skull <player>
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
