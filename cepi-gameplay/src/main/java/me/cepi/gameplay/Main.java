@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.cepi.gameplay.modules.AntiCropTrample;
+import me.cepi.gameplay.modules.AntiGrief;
 import me.cepi.gameplay.modules.ConnectionMessages;
 import me.cepi.gameplay.modules.CreativeBuilder;
 import me.cepi.gameplay.modules.Dash;
@@ -60,6 +61,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Dash(), this);
         getServer().getPluginManager().registerEvents(new CreativeBuilder(), this);
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
+        getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         
         this.getCommand("afk").setExecutor(new AfkCommand());
 
