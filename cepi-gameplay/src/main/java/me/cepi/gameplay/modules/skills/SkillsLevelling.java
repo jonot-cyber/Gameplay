@@ -25,7 +25,7 @@ public class SkillsLevelling implements Listener {
 		
 		TextComponent message = new TextComponent();
 		message.setColor(ChatColor.GRAY);
-		message.setText("+" + levelChange + "Skill Point" + (levelChange == 1 ? "" : "s") + " ");
+		message.setText("+" + levelChange + " Skill Point" + (levelChange == 1 ? "" : "s") + " ");
 		insert.addExtra(message);
 		
 		TextComponent clickable = new TextComponent();

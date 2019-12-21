@@ -26,6 +26,7 @@ import me.cepi.gameplay.modules.Speed;
 import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.Top;
+import me.cepi.gameplay.modules.Warp;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
@@ -106,6 +107,13 @@ public class Main extends JavaPlugin {
         
         this.getCommand("nv").setExecutor(new NightVision());
         this.getCommand("nightvision").setExecutor(new NightVision());
+        
+        this.getCommand("warp").setExecutor(new Warp());
+        this.getCommand("warps").setExecutor(new Warp());
+        this.getCommand("setwarp").setExecutor(new Warp());
+        this.getCommand("delwarp").setExecutor(new Warp());
+        this.getCommand("deletewarp").setExecutor(new Warp());
+		Warp.readWarps();
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }

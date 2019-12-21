@@ -84,6 +84,23 @@ commands:
       description: Activates or deactivates night vision
       usage: /nv
       aliases: [nightvision]
+   warp:
+      permission: cepi.builder
+      description: Teleport to a warp
+      usage: /warp <warp>
+   warps:
+      permission: cepi.builder
+      description: See all warps
+      usage: /warps
+   setwarp:
+      permission: cepi.builder
+      description: Set a warp
+      usage: /setwarp <warp>
+   delwarp:
+      permission: cepi.builder
+      description: Delete a warp
+      usage: /delwarp <warp>
+      aliases: [deletewarp]
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
