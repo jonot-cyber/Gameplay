@@ -79,6 +79,11 @@ commands:
       permission: cepi.builder
       description: Change the flight status of a player
       usage: /fly
+   nv:
+      permission: cepi.builder
+      description: Activates or deactivates night vision
+      usage: /nv
+      aliases: [nightvision]
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

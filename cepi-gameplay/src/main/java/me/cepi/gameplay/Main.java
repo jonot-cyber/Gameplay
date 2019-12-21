@@ -20,6 +20,7 @@ import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.Gamemode;
 import me.cepi.gameplay.modules.GiveSkull;
 import me.cepi.gameplay.modules.ListCommand;
+import me.cepi.gameplay.modules.NightVision;
 import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.Speed;
 import me.cepi.gameplay.modules.Status;
@@ -100,6 +101,9 @@ public class Main extends JavaPlugin {
         this.getCommand("skull").setExecutor(new GiveSkull());
         
         this.getCommand("fly").setExecutor(new FlyCommand());
+        
+        this.getCommand("nv").setExecutor(new NightVision());
+        this.getCommand("nightvision").setExecutor(new NightVision());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }
