@@ -19,6 +19,7 @@ import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.Gamemode;
 import me.cepi.gameplay.modules.ListCommand;
 import me.cepi.gameplay.modules.ServerListPing;
+import me.cepi.gameplay.modules.Speed;
 import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
 import me.cepi.gameplay.modules.Top;
@@ -89,6 +90,10 @@ public class Main extends JavaPlugin {
         this.getCommand("gma").setExecutor(new Gamemode());
         
         this.getCommand("top").setExecutor(new Top());
+        
+        this.getCommand("flyspeed").setExecutor(new Speed());
+        this.getCommand("walkspeed").setExecutor(new Speed());
+        this.getCommand("speed").setExecutor(new Speed());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }

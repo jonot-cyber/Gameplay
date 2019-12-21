@@ -63,9 +63,14 @@ commands:
       usage: /gamemode <gamemode>
       aliases: [gmc, gms, gmsp, gma]
    top:
-      permission: cepi.buildere
+      permission: cepi.builder
       description: Teleports you to the top
       usage: /top
+   speed:
+      permission: cepi.builder
+      description: Sets your speed
+      usage: /speed <fly/walk> <speed>
+      aliases: [flyspeed, walkspeed]
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
