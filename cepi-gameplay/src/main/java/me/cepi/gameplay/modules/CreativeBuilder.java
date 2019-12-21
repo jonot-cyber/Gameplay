@@ -12,6 +12,7 @@ public class CreativeBuilder implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		if (player.hasPermission("cepi.builder")) player.setGameMode(GameMode.CREATIVE);
+		else player.setGameMode(GameMode.ADVENTURE);
 	}
 
 }
