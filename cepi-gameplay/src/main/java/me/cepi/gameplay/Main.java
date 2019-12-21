@@ -31,6 +31,7 @@ import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
 import me.cepi.gameplay.modules.economy.EcoAdmin;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
+import me.cepi.gameplay.modules.skills.SkillsLevelling;
 import me.cepi.gameplay.modules.social.Friends;
 import me.cepi.gameplay.modules.social.Party;
 import me.cepi.gameplay.modules.spawn.MakeSpawn;
@@ -57,7 +58,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new StylishDeath(), this);
         getServer().getPluginManager().registerEvents(new Dash(), this);
         getServer().getPluginManager().registerEvents(new CreativeBuilder(), this);
-        // getServer().getPluginManager().registerEvents(new ListInventoryListener(), this);;
+        getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
+        
         this.getCommand("afk").setExecutor(new AfkCommand());
 
         this.getCommand("elytra").setExecutor(new ElytraCommand());

@@ -19,7 +19,7 @@ public class ListCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (sender instanceof ConsoleCommandSender) return false;
 		Player player = (Player) sender;
-		Menu menu = new Menu(player, 6, "Test Player List");
+		Menu menu = new Menu(player, 6, "Player List");
 
 		int num = 0;
 		for (Player p : Bukkit.getOnlinePlayers()) {
