@@ -15,6 +15,7 @@ import me.cepi.gameplay.modules.DiscordInfo;
 import me.cepi.gameplay.modules.ElytraBoost;
 import me.cepi.gameplay.modules.ElytraCommand;
 import me.cepi.gameplay.modules.EnderPearlRider;
+import me.cepi.gameplay.modules.FlyCommand;
 import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.Gamemode;
 import me.cepi.gameplay.modules.GiveSkull;
@@ -97,6 +98,8 @@ public class Main extends JavaPlugin {
         this.getCommand("speed").setExecutor(new Speed());
         
         this.getCommand("skull").setExecutor(new GiveSkull());
+        
+        this.getCommand("fly").setExecutor(new FlyCommand());
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
     }

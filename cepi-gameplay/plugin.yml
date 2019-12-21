@@ -75,6 +75,10 @@ commands:
       permission: cepi.builder
       description: Give the user a skull
       usage: /skull <player>
+   fly:
+      permission: cepi.builder
+      description: Change the flight status of a player
+      usage: /fly
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
