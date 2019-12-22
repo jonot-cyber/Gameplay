@@ -40,5 +40,26 @@ public class TeleportCommand implements CommandExecutor {
 			}
 		}
 		return true;
+		
+	}
+	
+	public boolean onCommand1(CommandSender sender, Command command, String label, String[] args) {
+		if (sender instanceof ConsoleCommandSender) return false;
+		if (!sender.hasPermission("cepi.staff")) return false;
+		Player player = (Player) sender;
+		if (args.length == 1) {
+			Player target = Bukkit.getPlayer(args[0]);
+			if (!(target == null)) {
+				Location loc = player.getLocation();
+				target.teleport(loc);
+				player.sendMessage(Inserts.POSITIVE + "You teleported " + target.getName() + " to you");	
+				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported you to them");
+			} else {
+				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player");
+			}
+		} else {
+			player.sendMessage(Inserts.NEGATIVE + "Error: too many arguements");
+		}
+		return true;
 	}
 }
