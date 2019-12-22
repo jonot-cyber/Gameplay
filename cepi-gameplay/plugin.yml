@@ -105,6 +105,14 @@ commands:
       permission: cepi.mod
       usage: /kick <player> [<reason>]
       description: Kickes a player for a reason.
+   tp:
+      permission: cepi.staff
+      usage: /tp <player>
+      description: Teleport to a player.
+   tphere:
+      permission: cepi.staff
+      usage: /tphere <player>
+      description: Teleport a player to yourself.
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

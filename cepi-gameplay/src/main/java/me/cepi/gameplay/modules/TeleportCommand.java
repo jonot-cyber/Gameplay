@@ -1,0 +1,65 @@
+package me.cepi.gameplay.modules;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
+
+import me.cepi.gameplay.modules.inserts.Inserts;
+
+public class TeleportCommand implements CommandExecutor {
+
+	@Override
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		if (sender instanceof ConsoleCommandSender) return false;
+		if (!sender.hasPermission("cepi.builder")) return false;
+		Player player = (Player) sender;
+		Player target = Bukkit.getPlayer(args[0]);
+		if (args.length == 1) {
+			if (!(target == null)) {
+				Location loc = target.getLocation();
+				player.teleport(loc);
+				player.sendMessage(Inserts.POSITIVE + "You teleported to " + target.getName());
+				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported to you");
+			} else {
+				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player!");
+			}
+		} else if (args.length == 2) {
+			Player target2 = Bukkit.getPlayer(args[1]);
+			if (!(target2 == null)) {
+				Location loc = target2.getLocation();
+				target.teleport(loc);
+				target.sendMessage(Inserts.POSITIVE + "You have been teleported to " + target2.getName() + " by " + player.getName());
+				target2.sendMessage(Inserts.POSITIVE + target.getName() + " has been teleported to you by " + player.getName());
+				player.sendMessage(Inserts.POSITIVE + "You teleported " + target.getName() + " to " + target2.getName());
+			} else {
+				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player!");
+			}
+		}
+		return true;
+		
+	}
+	
+	public boolean onCommand1(CommandSender sender, Command command, String label, String[] args) {
+		if (sender instanceof ConsoleCommandSender) return false;
+		if (!sender.hasPermission("cepi.staff")) return false;
+		Player player = (Player) sender;
+		if (args.length == 1) {
+			Player target = Bukkit.getPlayer(args[0]);
+			if (!(target == null)) {
+				Location loc = player.getLocation();
+				target.teleport(loc);
+				player.sendMessage(Inserts.POSITIVE + "You teleported " + target.getName() + " to you");	
+				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported you to them");
+			} else {
+				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player");
+			}
+		} else {
+			player.sendMessage(Inserts.NEGATIVE + "Error: too many arguements");
+		}
+		return true;
+	}
+}

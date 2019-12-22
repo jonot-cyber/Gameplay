@@ -26,7 +26,9 @@ import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.Speed;
 import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
+import me.cepi.gameplay.modules.TeleportCommand;
 import me.cepi.gameplay.modules.Top;
+import me.cepi.gameplay.modules.TphereCommand;
 import me.cepi.gameplay.modules.Warp;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
@@ -65,6 +67,10 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         getServer().getPluginManager().registerEvents(new WeaponBench(), this);
+        
+        this.getCommand("tphere").setExecutor(new TphereCommand());
+        
+        this.getCommand("tp").setExecutor(new TeleportCommand());
         
         this.getCommand("afk").setExecutor(new AfkCommand());
 
