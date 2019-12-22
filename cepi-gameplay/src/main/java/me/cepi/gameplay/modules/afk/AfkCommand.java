@@ -9,6 +9,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import me.cepi.gameplay.Main;
+import me.cepi.gameplay.modules.inserts.Inserts;
 
 public class AfkCommand implements CommandExecutor {
 	@Override
@@ -19,10 +20,10 @@ public class AfkCommand implements CommandExecutor {
 
 		if (afkPlayers.contains(player)) {
 			afkPlayers.remove(player);
-			player.sendMessage("§8[§e*§8]§7 You are no longer afk!");
+			player.sendMessage(Inserts.POSITIVE + "You are no longer afk!");
 		} else {
 			afkPlayers.add(player);
-			player.sendMessage("§8[§e*§8]§7 You are now afk!");
+			player.sendMessage(Inserts.POSITIVE + "You are now afk!");
 		}
 
 		Main.afkList = afkPlayers;
