@@ -34,6 +34,7 @@ import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
 import me.cepi.gameplay.modules.economy.EcoAdmin;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
+import me.cepi.gameplay.modules.moderation.Kick;
 import me.cepi.gameplay.modules.skills.SkillsLevelling;
 import me.cepi.gameplay.modules.social.Friends;
 import me.cepi.gameplay.modules.social.Party;
@@ -118,6 +119,8 @@ public class Main extends JavaPlugin {
         this.getCommand("setwarp").setExecutor(new Warp());
         this.getCommand("delwarp").setExecutor(new Warp());
         this.getCommand("deletewarp").setExecutor(new Warp());
+        
+        this.getCommand("kick").setExecutor(new Kick());
 		Warp.readWarps();
         
         this.logger.info("[Cepi Gameplay] has been enabled.");

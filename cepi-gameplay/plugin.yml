@@ -101,10 +101,14 @@ commands:
       description: Delete a warp
       usage: /delwarp <warp>
       aliases: [deletewarp]
+   kick:
+      permission: cepi.mod
+      usage: /kick <player> [<reason>]
+      description: Kickes a player for a reason.
    tp:
-      description: teleport to a player
-      usage: /tp <player>
       permission: cepi.staff
+      usage: /tp <player>
+      description: Teleport to a player.
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.

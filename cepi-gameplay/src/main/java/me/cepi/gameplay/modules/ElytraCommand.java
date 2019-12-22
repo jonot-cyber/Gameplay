@@ -10,6 +10,8 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import me.cepi.gameplay.modules.inserts.Inserts;
+
 public class ElytraCommand implements CommandExecutor {
 
 	@Override
@@ -22,7 +24,7 @@ public class ElytraCommand implements CommandExecutor {
 		loc.setY(loc.getY() + 50);
 		player.teleport(loc);
 		player.setGliding(true);
-		player.sendMessage("§8[§a*§8]§7 Fly!");
+		player.sendMessage(Inserts.POSITIVE + "Fly!");
 		player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 2, 2);
 		return true;
 	}
