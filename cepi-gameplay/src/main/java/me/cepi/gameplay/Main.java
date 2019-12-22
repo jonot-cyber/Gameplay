@@ -32,6 +32,7 @@ import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
 import me.cepi.gameplay.modules.economy.EcoAdmin;
+import me.cepi.gameplay.modules.itemcrafting.WeaponBench;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
 import me.cepi.gameplay.modules.moderation.Kick;
 import me.cepi.gameplay.modules.skills.SkillsLevelling;
@@ -63,6 +64,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CreativeBuilder(), this);
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
+        getServer().getPluginManager().registerEvents(new WeaponBench(), this);
         
         this.getCommand("afk").setExecutor(new AfkCommand());
 
