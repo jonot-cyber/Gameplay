@@ -113,6 +113,9 @@ commands:
       permission: cepi.staff
       usage: /tphere <player>
       description: Teleport a player to yourself.
+   msg:
+      usage: /msg <player>
+      description: message a player
 permissions:
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
