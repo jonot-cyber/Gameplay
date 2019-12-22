@@ -25,6 +25,7 @@ public class MessageSystem implements CommandExecutor{
 				String msg = builder.toString();
 				player.sendMessage(Inserts.POSITIVE + "To " + target.getName() + ": " + msg);
 				target.sendMessage(Inserts.POSITIVE + "From " + player.getName() + ": " + msg);
+				Reply.reply.put(player, target);
 			} else {
 				player.sendMessage(Inserts.ERROR + "That is not a valid player!");
 			}

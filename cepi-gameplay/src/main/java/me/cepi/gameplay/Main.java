@@ -24,6 +24,7 @@ import me.cepi.gameplay.modules.GiveSkull;
 import me.cepi.gameplay.modules.ListCommand;
 import me.cepi.gameplay.modules.MessageSystem;
 import me.cepi.gameplay.modules.NightVision;
+import me.cepi.gameplay.modules.Reply;
 import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.Speed;
 import me.cepi.gameplay.modules.Status;
@@ -69,6 +70,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         getServer().getPluginManager().registerEvents(new WeaponBench(), this);
+        
+        this.getCommand("r").setExecutor(new Reply());
         
         this.getCommand("msg").setExecutor(new MessageSystem());
         
