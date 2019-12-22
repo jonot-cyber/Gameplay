@@ -21,6 +21,7 @@ import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.Gamemode;
 import me.cepi.gameplay.modules.GiveSkull;
 import me.cepi.gameplay.modules.ListCommand;
+import me.cepi.gameplay.modules.MessageSystem;
 import me.cepi.gameplay.modules.NightVision;
 import me.cepi.gameplay.modules.Reply;
 import me.cepi.gameplay.modules.ServerListPing;

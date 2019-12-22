@@ -51,6 +51,10 @@ public class EcoAdmin implements CommandExecutor {
 					});
 				else
 					player.sendMessage(Inserts.ERROR + "Type in a valid number.");
+			} else if(args[0].equalsIgnoreCase("remove")) {
+				if (args.length > 1) {
+					
+				} else player.sendMessage(Inserts.ERROR + "Type in a valid number.");
 			}
 		}
 		return true;
