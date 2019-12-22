@@ -18,7 +18,11 @@ public class Menu implements Listener {
     public Inventory toInventory() {
         return inv;
     }
-
+    
+    public MenuItems setRow(Integer row, ItemStack stack) {
+    	return null;
+    }
+    
     public Menu(Player p, Integer inventoryRows, String inventoryTitle) {
     	
         if (!(inventoryRows <= 1 || inventoryRows >= 6) && !(inventoryTitle.contains("§"))) {

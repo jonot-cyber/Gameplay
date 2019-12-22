@@ -9,7 +9,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.cepi.gameplay.modules.AntiCropTrample;
 import me.cepi.gameplay.modules.AntiGrief;
-import me.cepi.gameplay.modules.BuildWorld;
 import me.cepi.gameplay.modules.ConnectionMessages;
 import me.cepi.gameplay.modules.CreativeBuilder;
 import me.cepi.gameplay.modules.Dash;
@@ -22,7 +21,6 @@ import me.cepi.gameplay.modules.FormattedChat;
 import me.cepi.gameplay.modules.Gamemode;
 import me.cepi.gameplay.modules.GiveSkull;
 import me.cepi.gameplay.modules.ListCommand;
-import me.cepi.gameplay.modules.MessageSystem;
 import me.cepi.gameplay.modules.NightVision;
 import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.Speed;
@@ -69,8 +67,6 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         getServer().getPluginManager().registerEvents(new WeaponBench(), this);
-        
-        this.getCommand("msg").setExecutor(new MessageSystem());
         
         this.getCommand("tphere").setExecutor(new TphereCommand());
         
@@ -128,7 +124,6 @@ public class Main extends JavaPlugin {
         this.getCommand("setwarp").setExecutor(new Warp());
         this.getCommand("delwarp").setExecutor(new Warp());
         this.getCommand("deletewarp").setExecutor(new Warp());
-        this.getCommand("buildworld").setExecutor(new BuildWorld());
         
         this.getCommand("kick").setExecutor(new Kick());
 		Warp.readWarps();
