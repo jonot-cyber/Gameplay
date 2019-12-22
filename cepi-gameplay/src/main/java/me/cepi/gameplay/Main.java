@@ -27,13 +27,17 @@ import me.cepi.gameplay.modules.ServerListPing;
 import me.cepi.gameplay.modules.Speed;
 import me.cepi.gameplay.modules.Status;
 import me.cepi.gameplay.modules.StylishDeath;
+import me.cepi.gameplay.modules.TeleportCommand;
 import me.cepi.gameplay.modules.Top;
+import me.cepi.gameplay.modules.TphereCommand;
 import me.cepi.gameplay.modules.Warp;
 import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
 import me.cepi.gameplay.modules.economy.EcoAdmin;
+import me.cepi.gameplay.modules.itemcrafting.WeaponBench;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
+import me.cepi.gameplay.modules.moderation.Kick;
 import me.cepi.gameplay.modules.skills.SkillsLevelling;
 import me.cepi.gameplay.modules.social.Friends;
 import me.cepi.gameplay.modules.social.Party;
@@ -63,6 +67,11 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CreativeBuilder(), this);
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
+        getServer().getPluginManager().registerEvents(new WeaponBench(), this);
+        
+        this.getCommand("tphere").setExecutor(new TphereCommand());
+        
+        this.getCommand("tp").setExecutor(new TeleportCommand());
         
         this.getCommand("afk").setExecutor(new AfkCommand());
 
@@ -117,6 +126,8 @@ public class Main extends JavaPlugin {
         this.getCommand("delwarp").setExecutor(new Warp());
         this.getCommand("deletewarp").setExecutor(new Warp());
         this.getCommand("buildworld").setExecutor(new BuildWorld());
+        
+        this.getCommand("kick").setExecutor(new Kick());
 		Warp.readWarps();
         
         this.logger.info("[Cepi Gameplay] has been enabled.");
