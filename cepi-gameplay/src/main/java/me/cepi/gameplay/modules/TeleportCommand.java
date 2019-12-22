@@ -29,7 +29,7 @@ public class TeleportCommand implements CommandExecutor {
 			}
 		} else if (args.length == 2) {
 			Player target2 = Bukkit.getPlayer(args[1]);
-			if (!(target2 == null)) {
+			if (!(target == null || target2 == null)) {
 				Location loc = target2.getLocation();
 				target.teleport(loc);
 				target.sendMessage(Inserts.POSITIVE + "You have been teleported to " + target2.getName() + " by " + player.getName());
@@ -38,27 +38,6 @@ public class TeleportCommand implements CommandExecutor {
 			} else {
 				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player!");
 			}
-		}
-		return true;
-		
-	}
-	
-	public boolean onCommand1(CommandSender sender, Command command, String label, String[] args) {
-		if (sender instanceof ConsoleCommandSender) return false;
-		if (!sender.hasPermission("cepi.staff")) return false;
-		Player player = (Player) sender;
-		if (args.length == 1) {
-			Player target = Bukkit.getPlayer(args[0]);
-			if (!(target == null)) {
-				Location loc = player.getLocation();
-				target.teleport(loc);
-				player.sendMessage(Inserts.POSITIVE + "You teleported " + target.getName() + " to you");	
-				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported you to them");
-			} else {
-				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player");
-			}
-		} else {
-			player.sendMessage(Inserts.NEGATIVE + "Error: too many arguements");
 		}
 		return true;
 	}

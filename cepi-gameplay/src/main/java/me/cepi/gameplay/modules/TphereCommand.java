@@ -24,10 +24,10 @@ public class TphereCommand implements CommandExecutor{
 				player.sendMessage(Inserts.POSITIVE + "You teleported " + target.getName() + " to you");	
 				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported you to them");
 			} else {
-				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player");
+				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player!");
 			}
 		} else {
-			player.sendMessage(Inserts.NEGATIVE + "Error: too many arguements");
+			player.sendMessage(Inserts.NEGATIVE + "Error: too many arguements!");
 		}
 		return true;
 	}
