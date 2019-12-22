@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.cepi.gameplay.modules.AntiCropTrample;
 import me.cepi.gameplay.modules.AntiGrief;
+import me.cepi.gameplay.modules.BuildWorld;
 import me.cepi.gameplay.modules.ConnectionMessages;
 import me.cepi.gameplay.modules.CreativeBuilder;
 import me.cepi.gameplay.modules.Dash;
@@ -127,6 +128,7 @@ public class Main extends JavaPlugin {
         this.getCommand("setwarp").setExecutor(new Warp());
         this.getCommand("delwarp").setExecutor(new Warp());
         this.getCommand("deletewarp").setExecutor(new Warp());
+        this.getCommand("buildworld").setExecutor(new BuildWorld());
         
         this.getCommand("kick").setExecutor(new Kick());
 		Warp.readWarps();

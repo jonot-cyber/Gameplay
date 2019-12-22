@@ -16,19 +16,15 @@ public class TphereCommand implements CommandExecutor{
 		if (sender instanceof ConsoleCommandSender) return false;
 		if (!sender.hasPermission("cepi.staff")) return false;
 		Player player = (Player) sender;
-		if (args.length == 1) {
+		if (args.length > 0) {
 			Player target = Bukkit.getPlayer(args[0]);
 			if (!(target == null)) {
 				Location loc = player.getLocation();
 				target.teleport(loc);
 				player.sendMessage(Inserts.POSITIVE + "You teleported " + target.getName() + " to you");	
 				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported you to them");
-			} else {
-				player.sendMessage(Inserts.NEGATIVE + "That is not a valid player!");
-			}
-		} else {
-			player.sendMessage(Inserts.NEGATIVE + "Error: too many arguements!");
-		}
+			} else player.sendMessage(Inserts.NEGATIVE + "That is not a valid player!");
+		} else player.sendMessage(Inserts.NEGATIVE + "You need someone to teleport to!");
 		return true;
 	}
 	

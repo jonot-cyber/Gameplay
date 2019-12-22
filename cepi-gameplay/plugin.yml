@@ -101,6 +101,10 @@ commands:
       description: Delete a warp
       usage: /delwarp <warp>
       aliases: [deletewarp]
+   buildworld:
+      permission: cepi.builder
+      description: Sends you to build world.
+      usage: /buildworld
    kick:
       permission: cepi.mod
       usage: /kick <player> [<reason>]
