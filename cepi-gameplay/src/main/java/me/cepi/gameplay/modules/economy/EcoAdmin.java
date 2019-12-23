@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import me.cepi.gameplay.modules.inserts.Inserts;
 import net.md_5.bungee.api.ChatColor;
@@ -43,7 +44,7 @@ public class EcoAdmin implements CommandExecutor {
 		} else {
 			if (args[0].equalsIgnoreCase("give") && args.length > 1) {
 				if (Pattern.matches(numCheck, args[1]))
-					Currency.integerToItems((int) Double.parseDouble(args[1])).forEach(item -> {
+					Currency.integerToItems(Integer.parseInt(args[1])).forEach(item -> {
 						if (player.getInventory().firstEmpty() == -1) 
 							player.getWorld().dropItem(player.getLocation(), item);
 						else
@@ -51,6 +52,12 @@ public class EcoAdmin implements CommandExecutor {
 					});
 				else
 					player.sendMessage(Inserts.ERROR + "Type in a valid number.");
+			} else if(args[0].equalsIgnoreCase("remove")) {
+				if (args.length > 1) {
+					if (Pattern.matches(numCheck, args[1])) {
+						player.getInventory().setContents(Currency.removeMoney(player.getInventory().getContents(), Integer.parseInt(args[1])).toArray(new ItemStack[0]));
+					} else player.sendMessage(Inserts.NEGATIVE + "Invalid number!");
+				} else player.sendMessage(Inserts.ERROR + "Type in a valid number.");
 			}
 		}
 		return true;

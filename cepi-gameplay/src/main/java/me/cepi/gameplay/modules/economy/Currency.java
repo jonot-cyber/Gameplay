@@ -61,14 +61,21 @@ public class Currency implements Listener {
 		for (ItemStack item : stack) {
 			if (item != null) {
 				ItemMeta meta = item.getItemMeta();
-				if (meta.getDisplayName().contains("Silver Block")) 
-					amount = amount + 4096;
-				else if (meta.getDisplayName().contains("Silver Bar"))
-					amount = amount + 64;
-				else if (meta.getDisplayName().contains("Silver Nugget"))
-					amount++;
+				if (meta.getDisplayName().equals(generateTier(3, ChatColor.GREEN) + ChatColor.GRAY + "Silver Block"))
+					amount += 4096 * item.getAmount();
+				else if (meta.getDisplayName().equals(generateTier(2, ChatColor.BLUE) + ChatColor.GRAY + "Silver Bar"))
+					amount += 64 * item.getAmount();
+				else if (meta.getDisplayName().equals(generateTier(1, ChatColor.GRAY) + ChatColor.GRAY + "Silver Nugget"))
+					amount += item.getAmount();
 			}
 		}
 		return amount;
+	}
+	
+	public static List<ItemStack> removeMoney(ItemStack[] stack, int amount) {
+		int amountTotal = itemsToMoney(stack);
+		int amountEnd = amountTotal - amount;
+		if (amountEnd < 0) amountEnd = 0;
+		return integerToItems(amountEnd);
 	}
 }

@@ -23,4 +23,24 @@ public final class Molds {
 		return generateMold("Spear", Material.TRIDENT, "spears");
 	}
 	
+	public static final ItemStack CROSSBOW() {
+		return generateMold("Crossbow", Material.CROSSBOW, "crossbows");
+	}
+	
+	public static final ItemStack SWORD() {
+		return generateMold("Sword", Material.WOODEN_SWORD, "swords");
+	}
+	
+	public static final ItemStack AXE() {
+		return generateMold("Axe", Material.WOODEN_AXE, "axes");
+	}
+	
+	public static final ItemStack SCYTHE() {
+		return generateMold("Scythe", Material.WOODEN_HOE, "scythes");
+	}
+	
+	public static final ItemStack MACE() {
+		return generateMold("Mace", Material.WOODEN_SHOVEL, "maces");
+	}
+	
 }
