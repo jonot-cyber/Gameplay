@@ -1,5 +1,8 @@
 package me.cepi.gameplay.modules.menu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -20,7 +23,14 @@ public class Menu implements Listener {
     }
     
     public MenuItems setRow(Integer row, ItemStack stack) {
-    	return null;
+    	row--;
+    	int startIndex = row * 9;
+    	if (startIndex > inv.getSize()) return null;
+    	List<MenuItem> menuitems = new ArrayList<>();
+    	int endIndex = startIndex + 9;
+    	for (startIndex = row * 9; startIndex < endIndex; startIndex++) 
+    		menuitems.add(this.setItem(startIndex, stack));
+    	return new MenuItems(menuitems);
     }
     
     public Menu(Player p, Integer inventoryRows, String inventoryTitle) {
