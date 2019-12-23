@@ -20,8 +20,8 @@ public class ListCommand implements CommandExecutor {
 		if (sender instanceof ConsoleCommandSender) return false;
 		Player player = (Player) sender;
 		Menu menu = new Menu(player, 6, "Player List");
-
-		int num = 0;
+		menu.setRow(1, new OneItem(Material.BLACK_STAINED_GLASS_PANE).setName(" ").item);
+		int num = 9;
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			ItemStack head = new ItemStack(Material.PLAYER_HEAD);
 			SkullMeta headMeta = (SkullMeta) head.getItemMeta();
