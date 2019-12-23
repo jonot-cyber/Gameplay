@@ -7,10 +7,10 @@ import java.util.logging.Logger;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.cepi.gameplay.modules.Ban;
-import me.cepi.gameplay.modules.BuildWorld;
 import me.cepi.gameplay.modules.AntiCropTrample;
 import me.cepi.gameplay.modules.AntiGrief;
+import me.cepi.gameplay.modules.Back;
+import me.cepi.gameplay.modules.Ban;
 import me.cepi.gameplay.modules.ConnectionMessages;
 import me.cepi.gameplay.modules.CreativeBuilder;
 import me.cepi.gameplay.modules.Dash;
@@ -74,6 +74,7 @@ public class Main extends JavaPlugin {
         
         this.getCommand("ban").setExecutor(new Ban());
         
+        this.getCommand("back").setExecutor(new Back());
 
         this.getCommand("r").setExecutor(new Reply());
 

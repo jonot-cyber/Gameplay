@@ -22,6 +22,7 @@ public class TeleportCommand implements CommandExecutor {
 			Player target2 = Bukkit.getPlayer(args[1]);
 			if (!(target == null || target2 == null)) {
 				Location loc = target2.getLocation();
+				Back.back.put(player, loc);
 				target.teleport(loc);
 				target.sendMessage(Inserts.POSITIVE + "You have been teleported to " + target2.getName() + " by " + player.getName());
 				target2.sendMessage(Inserts.POSITIVE + target.getName() + " has been teleported to you by " + player.getName());
@@ -31,6 +32,7 @@ public class TeleportCommand implements CommandExecutor {
 		} else if (args.length > 0) {
 			if (!(target == null)) {
 				Location loc = target.getLocation();
+				Back.back.put(player, loc);
 				player.teleport(loc);
 				player.sendMessage(Inserts.POSITIVE + "You teleported to " + target.getName());
 				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported to you");

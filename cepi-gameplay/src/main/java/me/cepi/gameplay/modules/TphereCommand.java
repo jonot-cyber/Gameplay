@@ -20,6 +20,7 @@ public class TphereCommand implements CommandExecutor{
 			Player target = Bukkit.getPlayer(args[0]);
 			if (!(target == null)) {
 				Location loc = player.getLocation();
+				Back.back.put(player, loc);
 				target.teleport(loc);
 				player.sendMessage(Inserts.POSITIVE + "You teleported " + target.getName() + " to you");	
 				target.sendMessage(Inserts.POSITIVE + player.getName() + " has teleported you to them");

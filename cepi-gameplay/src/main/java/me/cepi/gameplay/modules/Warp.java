@@ -100,6 +100,7 @@ public class Warp implements CommandExecutor {
 		} else if (label.equalsIgnoreCase("warp")) {
 			if (args.length > 0) {
 				if (warps.containsKey(args[0])) {
+					Back.back.put(player, player.getLocation());
 					player.teleport(warps.get(args[0]));
 					player.sendMessage(Inserts.POSITIVE + "Teleported to " + ChatColor.YELLOW + args[0] + ChatColor.GRAY + "!");
 				} else player.sendMessage(Inserts.NEGATIVE + "This warp doesn't exist!");
@@ -107,7 +108,7 @@ public class Warp implements CommandExecutor {
 		} else if (label.equalsIgnoreCase("setwarp")) {
 			if (args.length > 0) {
 				warps.put(args[0], player.getLocation());
-				player.sendMessage(Inserts.POSITIVE + "Warp " + ChatColor.YELLOW + args[0] + ChatColor.GRAY + " set!");
+				player.sendMessage(Inserts.POSITIVE + "Warp " + ChatColor.YELLOW + args[0] + ChatColor.GRAY + " set!");`
 				registerWarps();
 			} else player.sendMessage(Inserts.NEGATIVE + "You need a warp to set!");
 		} else if (label.equalsIgnoreCase("delwarp") || label.equalsIgnoreCase("deletewarp")) {

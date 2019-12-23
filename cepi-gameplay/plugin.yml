@@ -126,6 +126,10 @@ commands:
    ban:
       usage: /ban <player>
       description: Ban a player.
+   back:
+      permission: cepi.staff
+      usage: /back
+      description: teleports you to a previous location.
 permissions:
    cepi.mod:
       description: Basic permissions for cepi mods.
