@@ -123,7 +123,12 @@ commands:
    r:
       usage: /r <player>
       description: reply to the last player that messaged you.
+   ban:
+      usage: /ban <player>
+      description: Ban a player.
 permissions:
+   cepi.mod:
+      description: Basic permissions for cepi mods.
    cepi.staff:
       description: Makes you oficially staff with basic staff perms on cepi.
       default: op

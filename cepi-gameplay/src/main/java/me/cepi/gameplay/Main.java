@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.cepi.gameplay.modules.AntiCropTrample;
 import me.cepi.gameplay.modules.AntiGrief;
+import me.cepi.gameplay.modules.Ban;
 import me.cepi.gameplay.modules.BuildWorld;
 import me.cepi.gameplay.modules.ConnectionMessages;
 import me.cepi.gameplay.modules.CreativeBuilder;
@@ -70,6 +71,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         getServer().getPluginManager().registerEvents(new WeaponBench(), this);
+        
+        this.getCommand("ban").setExecutor(new Ban());
         
         this.getCommand("r").setExecutor(new Reply());
         
