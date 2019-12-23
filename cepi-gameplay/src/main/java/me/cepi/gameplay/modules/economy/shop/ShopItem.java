@@ -1,4 +1,4 @@
-package me.cepi.gameplay.modules.economy;
+package me.cepi.gameplay.modules.economy.shop;
 
 import java.util.List;
 
@@ -15,11 +15,12 @@ public class ShopItem {
 		this.price = price;
 	}
 	
-	public ItemStack compile() {
+	public ItemStack compile(ShopColor themeColor) {
 		ItemStack item = this.item;
 		ItemMeta meta = item.getItemMeta();
 		List<String> lore = meta.getLore();
 		lore.add(" ");
+		lore.add("Price: ");
 		item.setItemMeta(meta);
 		return item;
 	}

@@ -1,4 +1,4 @@
-package me.cepi.gameplay.modules.economy;
+package me.cepi.gameplay.modules.economy.shop;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
