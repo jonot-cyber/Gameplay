@@ -33,6 +33,7 @@ import me.cepi.gameplay.modules.afk.AfkCommand;
 import me.cepi.gameplay.modules.afk.AfkListener;
 import me.cepi.gameplay.modules.economy.Balance;
 import me.cepi.gameplay.modules.economy.EcoAdmin;
+import me.cepi.gameplay.modules.economy.shop.ShopCommand;
 import me.cepi.gameplay.modules.elytra.ElytraBoost;
 import me.cepi.gameplay.modules.elytra.ElytraCommand;
 import me.cepi.gameplay.modules.itemcrafting.WeaponBench;
@@ -72,72 +73,74 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         getServer().getPluginManager().registerEvents(new WeaponBench(), this);
         
-        this.getCommand("ban").setExecutor(new Ban());
+        getCommand("ban").setExecutor(new Ban());
         
-        this.getCommand("back").setExecutor(new Back());
+        getCommand("back").setExecutor(new Back());
 
-        this.getCommand("r").setExecutor(new Reply());
+        getCommand("r").setExecutor(new Reply());
 
-        this.getCommand("msg").setExecutor(new MessageSystem());
+        getCommand("msg").setExecutor(new MessageSystem());
 
-        this.getCommand("tphere").setExecutor(new TphereCommand());
+        getCommand("tphere").setExecutor(new TphereCommand());
 
-        this.getCommand("tp").setExecutor(new TeleportCommand());
+        getCommand("tp").setExecutor(new TeleportCommand());
 
-        this.getCommand("afk").setExecutor(new AfkCommand());
+        getCommand("afk").setExecutor(new AfkCommand());
 
-        this.getCommand("elytra").setExecutor(new ElytraCommand());
+        getCommand("elytra").setExecutor(new ElytraCommand());
 
-        this.getCommand("sc").setExecutor(new StaffChatCommand());
-        this.getCommand("staffchat").setExecutor(new StaffChatCommand());
+        getCommand("sc").setExecutor(new StaffChatCommand());
+        getCommand("staffchat").setExecutor(new StaffChatCommand());
 
-        this.getCommand("list").setExecutor(new ListCommand());
+        getCommand("list").setExecutor(new ListCommand());
 
-        this.getCommand("setspawn").setExecutor(new MakeSpawn());
-        this.getCommand("spawn").setExecutor(new ToSpawn());
+        getCommand("setspawn").setExecutor(new MakeSpawn());
+        getCommand("spawn").setExecutor(new ToSpawn());
 
-        this.getCommand("discord").setExecutor(new DiscordInfo());
+        getCommand("discord").setExecutor(new DiscordInfo());
 
-        this.getCommand("rename").setExecutor(new SimpleRename());
+        getCommand("rename").setExecutor(new SimpleRename());
 
-        this.getCommand("party").setExecutor(new Party());
+        getCommand("party").setExecutor(new Party());
 
-        this.getCommand("friends").setExecutor(new Friends());
-        this.getCommand("friend").setExecutor(new Friends());
+        getCommand("friends").setExecutor(new Friends());
+        getCommand("friend").setExecutor(new Friends());
 
-        this.getCommand("serverstatus").setExecutor(new Status());
+        getCommand("serverstatus").setExecutor(new Status());
 
-        this.getCommand("eco").setExecutor(new EcoAdmin());
+        getCommand("eco").setExecutor(new EcoAdmin());
 
-        this.getCommand("bal").setExecutor(new Balance());
-        this.getCommand("balance").setExecutor(new Balance());
+        getCommand("bal").setExecutor(new Balance());
+        getCommand("balance").setExecutor(new Balance());
 
-        this.getCommand("gamemode").setExecutor(new Gamemode());
-        this.getCommand("gms").setExecutor(new Gamemode());
-        this.getCommand("gmsp").setExecutor(new Gamemode());
-        this.getCommand("gmc").setExecutor(new Gamemode());
-        this.getCommand("gma").setExecutor(new Gamemode());
+        getCommand("gamemode").setExecutor(new Gamemode());
+        getCommand("gms").setExecutor(new Gamemode());
+        getCommand("gmsp").setExecutor(new Gamemode());
+        getCommand("gmc").setExecutor(new Gamemode());
+        getCommand("gma").setExecutor(new Gamemode());
 
-        this.getCommand("top").setExecutor(new Top());
+        getCommand("top").setExecutor(new Top());
 
-        this.getCommand("flyspeed").setExecutor(new Speed());
-        this.getCommand("walkspeed").setExecutor(new Speed());
-        this.getCommand("speed").setExecutor(new Speed());
+        getCommand("flyspeed").setExecutor(new Speed());
+        getCommand("walkspeed").setExecutor(new Speed());
+        getCommand("speed").setExecutor(new Speed());
 
-        this.getCommand("skull").setExecutor(new GiveSkull());
+        getCommand("skull").setExecutor(new GiveSkull());
 
-        this.getCommand("fly").setExecutor(new FlyCommand());
+        getCommand("fly").setExecutor(new FlyCommand());
 
-        this.getCommand("nv").setExecutor(new NightVision());
-        this.getCommand("nightvision").setExecutor(new NightVision());
+        getCommand("nv").setExecutor(new NightVision());
+        getCommand("nightvision").setExecutor(new NightVision());
 
-        this.getCommand("warp").setExecutor(new Warp());
-        this.getCommand("warps").setExecutor(new Warp());
-        this.getCommand("setwarp").setExecutor(new Warp());
-        this.getCommand("delwarp").setExecutor(new Warp());
-        this.getCommand("deletewarp").setExecutor(new Warp());
+        getCommand("warp").setExecutor(new Warp());
+        getCommand("warps").setExecutor(new Warp());
+        getCommand("setwarp").setExecutor(new Warp());
+        getCommand("delwarp").setExecutor(new Warp());
+        getCommand("deletewarp").setExecutor(new Warp());
 
-        this.getCommand("kick").setExecutor(new Kick());
+        getCommand("kick").setExecutor(new Kick());
+        
+        getCommand("shop").setExecutor(new ShopCommand());
 		Warp.readWarps();
 
         this.logger.info("[Cepi Gameplay] has been enabled.");

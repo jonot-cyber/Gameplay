@@ -130,6 +130,9 @@ commands:
       permission: cepi.staff
       usage: /back
       description: teleports you to a previous location.
+   shop:
+      permission: cepi.eco
+      usage: /adminshop 
 permissions:
    cepi.mod:
       description: Basic permissions for cepi mods.
