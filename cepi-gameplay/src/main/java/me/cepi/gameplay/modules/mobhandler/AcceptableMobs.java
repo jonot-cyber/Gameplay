@@ -7,10 +7,14 @@ import com.google.gson.annotations.SerializedName;
 public enum AcceptableMobs {
 	@SerializedName("zombie") ZOMBIE(EntityType.ZOMBIE);
 	
-	public EntityType type;
+	private EntityType type;
 
 	private AcceptableMobs (EntityType type) {
 		this.type = type;
+	}
+	
+	public EntityType getType() {
+		return type;
 	}
 	
 }

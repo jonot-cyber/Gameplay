@@ -5,6 +5,7 @@ import java.util.List;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import me.cepi.gameplay.modules.OneItem;
 import me.cepi.gameplay.modules.menu.Menu;
 
 public class Shop {
@@ -24,6 +25,8 @@ public class Shop {
 	
 	public Menu compileMenu() {
 		Menu menu = new Menu(player, 6, title);
+		menu.setItem(4, icon);
+		menu.setRow(2, new OneItem(theme.getMaterial()).setName(" ").getItem());
 		return menu;
 	}
 	

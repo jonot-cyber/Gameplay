@@ -6,7 +6,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class OneItem {
 	
-	ItemStack item;
+	private ItemStack item;
 
 	public OneItem(Material material) {
 		this.item = new ItemStack(material);
@@ -17,6 +17,10 @@ public class OneItem {
 		meta.setDisplayName(name);
 		item.setItemMeta(meta);
 		return this;
+	}
+	
+	public ItemStack getItem() {
+		return item;
 	}
 	
 }

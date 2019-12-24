@@ -19,11 +19,19 @@ public enum ShopColor {
 	RED(ChatColor.RED, Material.RED_STAINED_GLASS_PANE),
 	BLACK(ChatColor.BLACK, Material.BLACK_STAINED_GLASS_PANE);
 	
-	public ChatColor color;
-	public Material material;
+	private ChatColor color;
+	private Material material;
 	
 	private ShopColor (ChatColor color, Material mat) {
 		this.color = color;
+	}
+	
+	public ChatColor getColor() {
+		return color;
+	}
+	
+	public Material getMaterial() {
+		return material;
 	}
 	
 }
