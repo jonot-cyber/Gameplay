@@ -27,6 +27,11 @@ public class Shop {
 		Menu menu = new Menu(player, 6, title);
 		menu.setItem(4, icon);
 		menu.setRow(2, new OneItem(theme.getMaterial()).setName(" ").getItem());
+		int index = 9;
+		for (ShopItem item : shopItems) {
+			menu.setItem(index, item.compile(theme));
+			index++;
+		}
 		return menu;
 	}
 	

@@ -25,12 +25,12 @@ public class StaffChatListener implements Listener {
 			message = message.substring(1);
 			for (Player p : Bukkit.getOnlinePlayers())
 				if (p.hasPermission("cepi.staff"))
-					p.sendMessage("§8(§e*§8) §7LeoDog896 §8// §f" + ChatColor.translateAlternateColorCodes('&', message));
+					p.sendMessage("§8(§e*§8) §7LeoDog896 §8// §f" + ChatColor.translateAlternateColorCodes('&', message.trim()));
 		} else if (staffPlayers.contains(player)) {
 			event.setCancelled(true);
 			for (Player p : Bukkit.getOnlinePlayers())
 				if (p.hasPermission("cepi.staff"))
-					p.sendMessage("§8(§e*§8) §7LeoDog896 §8// §f" + ChatColor.translateAlternateColorCodes('&', message));
+					p.sendMessage("§8(§e*§8) §7LeoDog896 §8// §f" + ChatColor.translateAlternateColorCodes('&', message.trim()));
 		}
 	}
 

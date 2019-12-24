@@ -14,6 +14,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.potion.PotionEffect;
 
 import me.cepi.gameplay.Main;
+import me.cepi.gameplay.modules.hologram.Hologram;
 import net.md_5.bungee.api.ChatColor;
 
 public class StylishDeath implements Listener {
@@ -32,7 +33,7 @@ public class StylishDeath implements Listener {
 				player.getWorld().spawnParticle(Particle.REDSTONE, player.getLocation(), 500, 1, 2, 1, dustOptions);
 				player.setGameMode(GameMode.SPECTATOR);
 				player.sendTitle(ChatColor.RED + "You Died!", ChatColor.GRAY + "Respawning in 3 seconds...", 20, 30, 0);
-				
+				new Hologram(ChatColor.RED + player.getDisplayName() + " died here.", player.getLocation(), 3);
 				Bukkit.getScheduler().runTaskLater(Main.getPlugin(Main.class), () -> 
 					player.sendTitle(ChatColor.RED + "You Died!", ChatColor.GRAY + "Respawning in 2 seconds...", 0, 30, 0)
 				, 20);
