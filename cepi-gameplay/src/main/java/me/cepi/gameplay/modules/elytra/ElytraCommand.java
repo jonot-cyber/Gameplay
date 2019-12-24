@@ -1,4 +1,4 @@
-package me.cepi.gameplay.modules;
+package me.cepi.gameplay.modules.elytra;
 
 import org.bukkit.Location;
 import org.bukkit.Material;

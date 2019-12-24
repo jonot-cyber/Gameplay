@@ -12,10 +12,10 @@ import me.cepi.gameplay.Main;
 
 public class MenuItems implements MenuItemFace, Listener {
 
-	public String title;
-	public List<Integer> slots = new ArrayList<>();
+	private String title;
+	private List<Integer> slots = new ArrayList<>();
     private Player player;
-    static Runnable codeBlock;
+    private Runnable codeBlock;
     private Boolean shouldCancel = false;
 
 	@EventHandler
@@ -47,7 +47,7 @@ public class MenuItems implements MenuItemFace, Listener {
 	}
 	
 	public MenuItems(List<MenuItem> menuItems) {
-		menuItems.forEach((item) -> slots.add(item.slot));
+		menuItems.forEach((item) -> slots.add(item.getSlot()));
 	}
 	
 }

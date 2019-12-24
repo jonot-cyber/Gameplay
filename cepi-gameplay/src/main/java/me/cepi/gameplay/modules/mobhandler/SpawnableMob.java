@@ -14,10 +14,6 @@ public class SpawnableMob {
 	private String name;
 	private EntityType type;
 
-	public SpawnableMob(){
-		
-	}
-	
 	public SpawnableMob(String name, EntityType type) {
 		this.name = name;
 		this.type = type;

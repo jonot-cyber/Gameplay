@@ -1,4 +1,4 @@
-package me.cepi.gameplay.modules;
+package me.cepi.gameplay.modules.social.messaging;
 
 import java.util.HashMap;
 import java.util.Map;

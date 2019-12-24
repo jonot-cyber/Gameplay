@@ -9,9 +9,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 public class Menu implements Listener {
-    static Inventory inv;
-    static Player player;
-    static String title;
+    private Inventory inv;
+    private Player player;
+    private String title;
 
     public MenuItem setItem(Integer slot, ItemStack item) {
         inv.setItem(slot, item);

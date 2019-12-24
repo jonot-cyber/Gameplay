@@ -25,12 +25,10 @@ public class Back implements CommandExecutor {
 				Location loc = back.get(player);
 				player.teleport(loc);
 				player.sendMessage(Inserts.POSITIVE + "You have been teleported back");
-			} else {
+			} else
 				player.sendMessage(Inserts.ERROR + "No previous locations");
-			}
-		} else {
+		} else
 			player.sendMessage(Inserts.ERROR + "Too many arguements");
-		}
 		return true;
 	}
 

@@ -8,10 +8,10 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import me.cepi.gameplay.Main;
 
 public class MenuItem implements Listener, MenuItemFace {
-    public String title;
-    public int slot;
+    private String title;
+    private int slot;
     private Player player;
-    static Runnable codeBlock;
+    private Runnable codeBlock;
     private Boolean shouldCancel = false;
 
     @EventHandler
@@ -45,6 +45,10 @@ public class MenuItem implements Listener, MenuItemFace {
         this.title = title;
         this.slot = slot;
         this.player = player;
+    }
+    
+    public int getSlot() {
+    	return slot;
     }
 
 }
