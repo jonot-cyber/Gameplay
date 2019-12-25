@@ -34,10 +34,13 @@ public class Shop {
 	public Shop(String title, ShopColor theme) {
 		this.title = title;
 		this.theme = theme;
+		this.icon = new OneItem(Material.EMERALD).setName(ChatColor.GREEN + "Shop").getItem();
 	}
 	
 	public Shop(String title) {
 		this.title = title;
+		this.theme = ShopColor.GREEN;
+		this.icon = new OneItem(Material.EMERALD).setName(ChatColor.GREEN + "Shop").getItem();
 	}
 	
 	public Menu compileMenu() {
@@ -45,9 +48,11 @@ public class Shop {
 		menu.setItem(4, icon);
 		menu.setRow(2, new OneItem(theme.getMaterial()).setName(" ").getItem());
 		int index = 9;
-		for (ShopItem item : shopItems) {
-			menu.setItem(index, item.compile(theme));
-			index++;
+		if (shopItems != null) {
+			for (ShopItem item : shopItems) {
+				menu.setItem(index, item.compile(theme));
+				index++;
+			}
 		}
 		return menu;
 	}

@@ -29,6 +29,7 @@ public class ShopCommand implements CommandExecutor {
 		Player player = (Player) sender;
 		if (args.length == 0 || (args.length > 0 && args[0] == "help")) {
 			player.sendMessage(ChatColor.GRAY + "--- " + ChatColor.GREEN + "Shop Panel" + ChatColor.GRAY + " ---");
+			player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop list");
 			player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop create <name>");
 			player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop edit <name>");
 			player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop add <name>");
@@ -79,6 +80,9 @@ public class ShopCommand implements CommandExecutor {
 				
 			} else if (args[0].equalsIgnoreCase("add")) {
 				
+			} else if (args[0].equalsIgnoreCase("list")) {
+				player.sendMessage(ChatColor.GREEN + "---" + ChatColor.GRAY + " Shops " + ChatColor.GREEN + "---");
+				shops.forEach((id, shop) -> player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + id));
 			} else if (args[0].equalsIgnoreCase("open")) { 
 				if (args.length > 1) {
 					if (shops.containsKey(args[1].toLowerCase())) {
@@ -96,8 +100,8 @@ public class ShopCommand implements CommandExecutor {
 					if (shops.containsKey(args[1].toLowerCase())) {
 						if (args.length == 2 || args[2].equalsIgnoreCase("help")) {
 							player.sendMessage(ChatColor.GRAY + "--- " + ChatColor.GREEN + "Meta Panel" + ChatColor.GRAY + " ---");
-							player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop meta " + args[1].toLowerCase() + "theme");
-							player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop meta " + args[1].toLowerCase() + "icon");
+							player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop meta " + args[1].toLowerCase() + " theme");
+							player.sendMessage(ChatColor.GREEN + "- " + ChatColor.GRAY + "/shop meta " + args[1].toLowerCase() + " icon");
 						} else if (args.length > 2) {
 							if (args[2].equalsIgnoreCase("theme")) {
 								Menu menu = new Menu(player, 6, "Theme Picker");

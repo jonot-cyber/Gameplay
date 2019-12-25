@@ -22,8 +22,9 @@ public enum ShopColor {
 	private ChatColor color;
 	private Material material;
 	
-	private ShopColor (ChatColor color, Material mat) {
+	ShopColor (ChatColor color, Material material) {
 		this.color = color;
+		this.material = material;
 	}
 	
 	public ChatColor getColor() {
