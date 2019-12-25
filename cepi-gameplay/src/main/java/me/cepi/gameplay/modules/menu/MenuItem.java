@@ -2,8 +2,10 @@ package me.cepi.gameplay.modules.menu;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 
 import me.cepi.gameplay.Main;
 
@@ -25,6 +27,16 @@ public class MenuItem implements Listener, MenuItemFace {
         	if (codeBlock != null) codeBlock.run();
         	if (this.shouldCancel) event.setCancelled(true);
         }  
+    }
+    
+    @EventHandler
+    public void inventoryClose(InventoryCloseEvent event) {
+    	Player eventPlayer = (Player) event.getPlayer();
+        String eventTitle = event.getView().getTitle();
+        if (player.getUniqueId() == eventPlayer.getUniqueId() 
+                && title == eventTitle) {
+        	 HandlerList.unregisterAll(this);
+        }
     }
 
     
