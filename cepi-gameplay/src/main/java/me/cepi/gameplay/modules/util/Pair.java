@@ -1,14 +1,9 @@
 package me.cepi.gameplay.modules.util;
 
 public class Pair<A, B> {
-    A first = null;
-    B second = null;
-
-    Pair(A first, B second) {
-        this.first = first;
-        this.second = second;
-    }
-
+    private A first = null;
+    private B second = null;
+    
     public A getFirst() {
         return first;
     }
@@ -23,6 +18,11 @@ public class Pair<A, B> {
 
     public void setSecond(B second) {
         this.second = second;
+    }
+    
+    public void set(A first, B second) {
+    	this.first = first;
+    	this.second = second;
     }
 
 }
