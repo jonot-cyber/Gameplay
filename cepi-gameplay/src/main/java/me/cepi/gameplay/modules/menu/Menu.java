@@ -33,6 +33,10 @@ public class Menu implements Listener {
     	return new MenuItems(menuitems);
     }
     
+    public ItemStack getItem(Integer slot) {
+    	return inv.getItem(slot);
+    }
+    
     public Menu(Player p, Integer inventoryRows, String inventoryTitle) {
     	
         if (!(inventoryRows <= 1 || inventoryRows >= 6) && !(inventoryTitle.contains("§"))) {
