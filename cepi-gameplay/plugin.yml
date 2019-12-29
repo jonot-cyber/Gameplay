@@ -129,10 +129,15 @@ commands:
    back:
       permission: cepi.staff
       usage: /back
-      description: teleports you to a previous location.
+      description: Teleports you to a previous location.
    shop:
+      description: Manage shops
       permission: cepi.eco
       usage: /adminshop 
+   sit:
+      description: Sit
+      permission: cepi.staff
+      usage: /sit
 permissions:
    cepi.mod:
       description: Basic permissions for cepi mods.

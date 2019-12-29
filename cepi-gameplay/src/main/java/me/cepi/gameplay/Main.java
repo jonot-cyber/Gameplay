@@ -40,6 +40,8 @@ import me.cepi.gameplay.modules.itemcrafting.WeaponBench;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
 import me.cepi.gameplay.modules.moderation.Ban;
 import me.cepi.gameplay.modules.moderation.Kick;
+import me.cepi.gameplay.modules.sit.Sit;
+import me.cepi.gameplay.modules.sit.SitListener;
 import me.cepi.gameplay.modules.skills.SkillsLevelling;
 import me.cepi.gameplay.modules.social.Friends;
 import me.cepi.gameplay.modules.social.Party;
@@ -72,6 +74,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SkillsLevelling(), this);
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         getServer().getPluginManager().registerEvents(new WeaponBench(), this);
+        getServer().getPluginManager().registerEvents(new SitListener(), this);
         
         getCommand("ban").setExecutor(new Ban());
         
@@ -141,6 +144,8 @@ public class Main extends JavaPlugin {
         getCommand("kick").setExecutor(new Kick());
         
         getCommand("shop").setExecutor(new ShopCommand());
+        
+        getCommand("sit").setExecutor(new Sit());
 		Warp.readWarps();
 
         this.logger.info("[Cepi Gameplay] has been enabled.");
