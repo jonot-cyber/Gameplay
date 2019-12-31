@@ -42,7 +42,6 @@ public class CustomItem {
 	}
 	
 	public ItemStack toItem() {
-		
 		String rarityName = "";
 		ChatColor rarityColor = null;
 		if (rarity == Rarity.COMMON) {
