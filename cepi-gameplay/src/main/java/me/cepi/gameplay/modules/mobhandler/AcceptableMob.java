@@ -4,12 +4,12 @@ import org.bukkit.entity.EntityType;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum AcceptableMobs {
+public enum AcceptableMob {
 	@SerializedName("zombie") ZOMBIE(EntityType.ZOMBIE);
 	
 	private EntityType type;
 
-	private AcceptableMobs (EntityType type) {
+	private AcceptableMob (EntityType type) {
 		this.type = type;
 	}
 	

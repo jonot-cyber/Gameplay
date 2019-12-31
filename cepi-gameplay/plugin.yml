@@ -138,6 +138,10 @@ commands:
       description: Sit
       permission: cepi.staff
       usage: /sit
+   spawnmob:
+      description: Spawn a mob
+      permission: cepi.staff
+      usage: /spawnmob <mob file>
 permissions:
    cepi.mod:
       description: Basic permissions for cepi mods.

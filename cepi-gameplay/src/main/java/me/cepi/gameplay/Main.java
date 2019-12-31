@@ -38,6 +38,7 @@ import me.cepi.gameplay.modules.elytra.ElytraBoost;
 import me.cepi.gameplay.modules.elytra.ElytraCommand;
 import me.cepi.gameplay.modules.itemcrafting.WeaponBench;
 import me.cepi.gameplay.modules.itemediting.SimpleRename;
+import me.cepi.gameplay.modules.mobhandler.commands.SpawnMob;
 import me.cepi.gameplay.modules.moderation.Ban;
 import me.cepi.gameplay.modules.moderation.Kick;
 import me.cepi.gameplay.modules.sit.Sit;
@@ -146,6 +147,8 @@ public class Main extends JavaPlugin {
         getCommand("shop").setExecutor(new ShopCommand());
         
         getCommand("sit").setExecutor(new Sit());
+        
+        getCommand("spawnmob").setExecutor(new SpawnMob());
 		Warp.readWarps();
 
         this.logger.info("[Cepi Gameplay] has been enabled.");
