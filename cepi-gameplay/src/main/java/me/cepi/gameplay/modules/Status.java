@@ -40,6 +40,10 @@ public class Status implements CommandExecutor {
 		long minStorage = getFolderSize(Main.getPlugin(Main.class).getServer().getWorldContainer()) / 1048576;
 		long maxStorage = Main.getPlugin(Main.class).getServer().getWorldContainer().getFreeSpace() / 1048576;
 		player.sendMessage(Inserts.NEUTRAL + "Storage: " + ChatColor.BLUE + minStorage + "mb / " + maxStorage + "mb");
+		
+		int processors = Runtime.getRuntime().availableProcessors();
+		player.sendMessage(Inserts.NEUTRAL + "Processors: " + ChatColor.BLUE + processors);
+		
 		player.sendMessage(ChatColor.GRAY + "------ " + ChatColor.GREEN + "======" + ChatColor.GRAY + "------");
 		return true;
 	}
