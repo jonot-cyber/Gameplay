@@ -18,14 +18,30 @@ import com.google.gson.JsonSyntaxException;
 
 import me.cepi.gameplay.modules.itemcrafting.Rarity;
 
-public class CustomWeapon {
+public class CustomItem {
 
-	private ChatColor rarityColor;
-	private String rarity;
+	private Rarity rarity;
 	private String name;
 	private Material material;
 
-	public CustomWeapon(String name, Material material, Rarity rarity) {
+	public CustomItem(String name, Material material, Rarity rarity) {
+		this.rarity = rarity;
+		this.material = material;
+		this.name = name;
+	}
+	
+	public CustomItem setDisplayName(String name) {
+		this.name = name;
+		return this;
+	}
+	
+	public static CustomItem fromJson(File file) throws JsonSyntaxException, JsonIOException, FileNotFoundException {
+		Gson gson = new GsonBuilder().create();
+		CustomItem weapon = gson.fromJson(new FileReader(file), CustomItem.class);
+		return weapon;
+	}
+	
+	public ItemStack toItem() {
 		
 		String rarityName = "";
 		ChatColor rarityColor = null;
@@ -46,30 +62,12 @@ public class CustomWeapon {
 			rarityColor = ChatColor.GOLD;
 		}
 		
-		this.rarity = rarityName;
-		this.rarityColor = rarityColor;
-		this.material = material;
-		this.name = name;
-	}
-	
-	public CustomWeapon setDisplayName(String name) {
-		this.name = name;
-		return this;
-	}
-	
-	public static CustomWeapon fromJson(File file) throws JsonSyntaxException, JsonIOException, FileNotFoundException {
-		Gson gson = new GsonBuilder().create();
-		CustomWeapon weapon = gson.fromJson(new FileReader(file), CustomWeapon.class);
-		return weapon;
-	}
-	
-	public ItemStack toItem() {
 		ItemStack weapon = new ItemStack(this.material);
 		ItemMeta weaponMeta = weapon.getItemMeta();
-		weaponMeta.setDisplayName(this.rarityColor + this.name);
+		weaponMeta.setDisplayName(rarityColor + this.name);
 		
 		List<String> lore = new ArrayList<>();
-		lore.add("" + this.rarityColor + ChatColor.BOLD + this.rarity);
+		lore.add("" + rarityColor + ChatColor.BOLD + rarityName);
 		
 		weaponMeta.setLore(lore);
 		weapon.setItemMeta(weaponMeta);

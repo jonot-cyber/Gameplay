@@ -142,6 +142,10 @@ commands:
       description: Spawn a mob
       permission: cepi.staff
       usage: /spawnmob <mob file>
+   giveitem:
+      description: Give an item
+      permission: cepi.staff
+      usage: /giveitem <item file>
 permissions:
    cepi.mod:
       description: Basic permissions for cepi mods.
