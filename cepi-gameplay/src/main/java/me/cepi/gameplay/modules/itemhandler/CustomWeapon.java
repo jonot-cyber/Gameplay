@@ -1,5 +1,8 @@
-package me.cepi.gameplay.modules.itemcrafting;
+package me.cepi.gameplay.modules.itemhandler;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +10,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+
+import me.cepi.gameplay.modules.itemcrafting.Rarity;
 
 public class CustomWeapon {
 
@@ -47,7 +57,13 @@ public class CustomWeapon {
 		return this;
 	}
 	
-	public ItemStack compile() {
+	public static CustomWeapon fromJson(File file) throws JsonSyntaxException, JsonIOException, FileNotFoundException {
+		Gson gson = new GsonBuilder().create();
+		CustomWeapon weapon = gson.fromJson(new FileReader(file), CustomWeapon.class);
+		return weapon;
+	}
+	
+	public ItemStack toItem() {
 		ItemStack weapon = new ItemStack(this.material);
 		ItemMeta weaponMeta = weapon.getItemMeta();
 		weaponMeta.setDisplayName(this.rarityColor + this.name);

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -27,12 +26,10 @@ public class SpawnableMob {
 	public static SpawnableMob fromJson(File file) throws JsonSyntaxException, JsonIOException, FileNotFoundException {
 		Gson gson = new GsonBuilder().create();
 		SpawnableMob mob = gson.fromJson(new FileReader(file), SpawnableMob.class);
-		Bukkit.broadcastMessage(mob.getType().toString());
 		return mob;
 	}
 	
 	public Entity spawnMob(Location loc) {
-		Bukkit.broadcastMessage(type.toString());
 		Entity entity = loc.getWorld().spawnEntity(loc, type.getType());
 		entity.setCustomName(this.name);
 		return entity;
