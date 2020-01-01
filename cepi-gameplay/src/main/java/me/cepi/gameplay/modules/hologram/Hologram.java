@@ -14,6 +14,7 @@ public class Hologram {
 		entity.setInvulnerable(true);
 		entity.setCustomName(name);
 		entity.setCustomNameVisible(true);
+		entity.setGravity(false);
 		entity.setVisible(false);
 		Bukkit.getScheduler().runTaskLater(Main.getPlugin(Main.class), () -> {
 			entity.remove();
