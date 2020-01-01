@@ -44,21 +44,30 @@ public class CustomItem {
 	public ItemStack toItem() {
 		String rarityName = "";
 		ChatColor rarityColor = null;
-		if (rarity == Rarity.COMMON) {
-			rarityName = "Common";
-			rarityColor = ChatColor.GRAY;
-		} else if (rarity == Rarity.UNCOMMON) {
-			rarityName = "Uncommon";
-			rarityColor = ChatColor.DARK_GREEN;
-		} else if (rarity == Rarity.RARE) {
-			rarityName = "Rare";
-			rarityColor = ChatColor.BLUE;
-		} else if (rarity == Rarity.EPIC) {
-			rarityName = "Epic";
-			rarityColor = ChatColor.LIGHT_PURPLE;
-		} else if (rarity == Rarity.LEGENDARY) {
-			rarityName = "Legendary";
-			rarityColor = ChatColor.GOLD;
+		switch (rarity) {
+			case COMMON:
+				rarityName = "Common";
+				rarityColor = ChatColor.GRAY;
+				break;
+			case UNCOMMON:
+				rarityName = "Uncommon";
+				rarityColor = ChatColor.DARK_GREEN;
+				break;
+			case RARE:
+				rarityName = "Rare";
+				rarityColor = ChatColor.BLUE;
+				break;
+			case EPIC:
+				rarityName = "Epic";
+				rarityColor = ChatColor.LIGHT_PURPLE;
+				break;
+			case LEGENDARY:
+				rarityName = "Legendary";
+				rarityColor = ChatColor.GOLD;
+				break;
+			default:
+				rarityName = "Common";
+				rarityColor = ChatColor.GRAY;
 		}
 		
 		ItemStack weapon = new ItemStack(this.material);
