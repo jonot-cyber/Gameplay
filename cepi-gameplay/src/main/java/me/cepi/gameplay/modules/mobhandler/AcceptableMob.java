@@ -5,7 +5,8 @@ import org.bukkit.entity.EntityType;
 import com.google.gson.annotations.SerializedName;
 
 public enum AcceptableMob {
-	@SerializedName("zombie") ZOMBIE(EntityType.ZOMBIE);
+	@SerializedName("zombie") ZOMBIE(EntityType.ZOMBIE),
+	@SerializedName("skeleton") SKELETON(EntityType.SKELETON);
 	
 	private EntityType type;
 

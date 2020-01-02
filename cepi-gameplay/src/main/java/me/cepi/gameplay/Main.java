@@ -14,6 +14,7 @@ import me.cepi.gameplay.modules.ConnectionMessages;
 import me.cepi.gameplay.modules.CreativeBuilder;
 import me.cepi.gameplay.modules.Dash;
 import me.cepi.gameplay.modules.DiscordInfo;
+import me.cepi.gameplay.modules.DogPet;
 import me.cepi.gameplay.modules.EnderPearlRider;
 import me.cepi.gameplay.modules.FlyCommand;
 import me.cepi.gameplay.modules.FormattedChat;
@@ -77,6 +78,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AntiGrief(), this);
         getServer().getPluginManager().registerEvents(new WeaponBench(), this);
         getServer().getPluginManager().registerEvents(new SitListener(), this);
+        getServer().getPluginManager().registerEvents(new DogPet(), this);
         
         getCommand("ban").setExecutor(new Ban());
         

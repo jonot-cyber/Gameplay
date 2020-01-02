@@ -2,6 +2,8 @@ package me.cepi.gameplay.modules;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -9,7 +11,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.lucko.luckperms.LuckPerms;
-import me.lucko.luckperms.api.*;
+import me.lucko.luckperms.api.Contexts;
+import me.lucko.luckperms.api.LuckPermsApi;
+import me.lucko.luckperms.api.User;
 
 public class FormattedChat implements Listener {
 
@@ -37,8 +41,14 @@ public class FormattedChat implements Listener {
 						 .replaceAll(":cloud:", "☁")
 						 .replaceAll(":skull:", "☠")
 						 .replaceAll(":shrug:", "¯\\_(ツ)_/¯");
-						
-
+		
+		if (message.contains("<3")) {
+			message = message.replaceAll("<3", ChatColor.RED + "<3");
+			Location loc = player.getLocation();
+			loc.setY(loc.getY() + 1);
+			player.getWorld().spawnParticle(Particle.HEART, loc, 20, 0.5, 0.5, 0.5);
+		}
+		
 		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 			if (message.contains(p.getDisplayName())) {
 				message = message.replaceAll(p.getDisplayName(), ChatColor.YELLOW + p.getDisplayName() + "§r");
