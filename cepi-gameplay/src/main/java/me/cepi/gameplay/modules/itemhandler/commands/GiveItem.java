@@ -30,10 +30,9 @@ public class GiveItem implements CommandExecutor {
 		try {
 			item = CustomItem.fromJson(file);
 			player.getInventory().addItem(item.toItem());
-		} catch (JsonSyntaxException e) {
+		} catch (JsonSyntaxException | JsonIOException e) {
 			player.sendMessage(Inserts.NEGATIVE + "JSON cannot be parsed.");
-		} catch (JsonIOException e) {
-			player.sendMessage(Inserts.NEGATIVE + "JSON cannot be parsed.");
+			e.printStackTrace();
 		} catch (FileNotFoundException e) {
 			player.sendMessage(Inserts.NEGATIVE + "That file doesn't exist!");
 		} catch (NullPointerException e) {

@@ -32,8 +32,10 @@ public class SpawnMob implements CommandExecutor {
 			mob.spawnMob(player.getLocation());
 		} catch (JsonSyntaxException e) {
 			player.sendMessage(Inserts.NEGATIVE + "JSON cannot be parsed.");
+			e.printStackTrace();
 		} catch (JsonIOException e) {
 			player.sendMessage(Inserts.NEGATIVE + "JSON cannot be parsed.");
+			e.printStackTrace();
 		} catch (FileNotFoundException e) {
 			player.sendMessage(Inserts.NEGATIVE + "That file doesn't exist!");
 		} catch (NullPointerException e) {

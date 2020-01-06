@@ -20,14 +20,27 @@ import me.cepi.gameplay.modules.itemcrafting.Rarity;
 
 public class CustomItem {
 
-	private Rarity rarity;
+	private Rarity rarity = Rarity.COMMON;
 	private String name;
 	private Material material;
+	private Integer level = 1;
 
+	public CustomItem(String name, Material material) {
+		this.material = material;
+		this.name = name;
+	}
+	
 	public CustomItem(String name, Material material, Rarity rarity) {
 		this.rarity = rarity;
 		this.material = material;
 		this.name = name;
+	}
+	
+	public CustomItem(String name, Material material, Rarity rarity, Integer level) {
+		this.rarity = rarity;
+		this.material = material;
+		this.name = name;
+		this.level = level;
 	}
 	
 	public CustomItem setDisplayName(String name) {
