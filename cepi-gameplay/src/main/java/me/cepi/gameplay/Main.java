@@ -55,7 +55,7 @@ import me.cepi.gameplay.modules.spawn.ToSpawn;
 import me.cepi.gameplay.modules.staffchat.StaffChatCommand;
 import me.cepi.gameplay.modules.staffchat.StaffChatListener;
 // import me.cepi.gameplay.modules.menu.MenuItem;
-
+/*why did the java program need glasses? Because he couldn't c#*/
 public class Main extends JavaPlugin {
 
 	Logger logger = Logger.getLogger("Minecraft");
