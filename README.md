@@ -1,7 +1,7 @@
 # [Cepi Gameplay](https://github.com/Project-Cepi/Gameplay/)
 
-[![license](https://img.shields.io/github/license/Project-Cepi/Gameplay.svg?style=flat-square)](https://github.com/Project-Cepi/Gameplay/blob/master/LICENSE)
-![Mostly Java](https://img.shields.io/github/languages/top/Project-Cepi/Gameplay.svg?style=flat-square&colorB=green)
+[![license](https://img.shields.io/github/license/Project-Cepi/Gameplay.svg?style=flat)](https://github.com/Project-Cepi/Gameplay/blob/master/LICENSE)
+![Mostly Java](https://img.shields.io/github/languages/top/Project-Cepi/Gameplay.svg?style=flat&colorB=green)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Project-Cepi/Gameplay)
 
 
