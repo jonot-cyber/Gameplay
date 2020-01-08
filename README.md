@@ -1,5 +1,11 @@
-# Cepi
-The first open source full minecraft RPG server. This RPG is *mostly* written in `Java`.
+# [Cepi Gameplay](https://github.com/Project-Cepi/Gameplay/)
+
+[![license](https://img.shields.io/github/license/Project-Cepi/Gameplay.svg?style=flat-square)](https://github.com/Project-Cepi/Gameplay/blob/master/LICENSE)
+![Mostly Java](https://img.shields.io/github/languages/top/Project-Cepi/Gameplay.svg?style=flat-square&colorB=green)
+![GitHub repo size](https://img.shields.io/github/repo-size/Project-Cepi/Gameplay)
+
+
+The first open source full minecraft RPG server (Gameplay Branch). This RPG is written in `Java`.
 
 
 ![A picture of a town inside the project.](https://cdn.glitch.com/8221397f-6c86-4df7-8594-6863280dc149/2019-09-23_20.59.40.png?v=1569286792096)
